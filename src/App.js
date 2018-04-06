@@ -36,7 +36,7 @@ class App extends Component {
 
   getQuote = async () => {
     try {
-      let quote = await axios.get('http://localhost:3000/quote')
+      let quote = await axios.get('http://localhost:8000/quote')
       this.setState({
         inspirationalQuote: quote.data.quoteText,
         quoteAuthor: quote.data.quoteAuthor
