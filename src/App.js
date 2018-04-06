@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 // ---- LIST OF COMPONENTS ----
+import NavBar from './components/NavBar'
 import Bed from './components/Bed'
 
 import './App.css';
@@ -34,7 +35,7 @@ class App extends Component {
   render() {
     return (
       <div className="Container">
-        <h1>MemoryHole</h1>
+        <NavBar />
         <Bed didMakeBed={this.state.didMakeBed} onSubmit={this.updateState}/>
       </div>
     );
