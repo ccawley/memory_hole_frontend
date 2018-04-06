@@ -15,10 +15,10 @@ class Bed extends Component {
           <Grid.Row centered>
             <Grid.Column textAlign='center' width={8} className='dailyCard'>
               <Form>
-                <Form.Group>
+                <Form.Group grouped>
                   <label>Did you make your bed?</label>
-                  <Form.Radio label='Sure did!' value='t' onChange={this.handleChange} />
-                  <Form.Radio label='Whoops, I forgot.' value='f' onChange={this.props.onSubmit} />
+                  <Form.Field type='radio' label='Sure did!' control='input' value='t' onChange={this.props.onSubmit} />
+                  <Form.Field type='radio' label='Whoops, I forgot.' control='input' value='f' onChange={this.props.onSubmit} />
                 </Form.Group>
               </Form>
             </Grid.Column>
