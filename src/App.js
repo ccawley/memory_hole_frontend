@@ -7,21 +7,35 @@ import './App.css';
 import axios from 'axios';
 
 class App extends Component {
-
-  state={
-    bed: false
+  constructor() {
+    super();
+    this.state = {
+      date: '',
+      didMakeBed: false,
+      inspirationalQuote: '',
+      meditationActivity: '',
+      gratitude1: '',
+      gratitude2: '',
+      gratitude3: '',
+      dailyGoal: '',
+      goalMicrotarget1: '',
+      goalMicrotarget2: '',
+      goalMicrotarget3: '',
+      selfieUrl: '',
+      hadBreakfast: false,
+      didExercise: false,
+    }
   }
 
   updateState = (value) => {
-    this.setState({ bed: value })
+    this.setState({ didMakeBed: value })
   }
 
   render() {
-    console.log('app rerender');
     return (
       <div className="Container">
         <h1>MemoryHole</h1>
-        <Bed bed={this.state.bed} onSubmit={this.updateState}/>
+        <Bed didMakeBed={this.state.didMakeBed} onSubmit={this.updateState}/>
       </div>
     );
   }
