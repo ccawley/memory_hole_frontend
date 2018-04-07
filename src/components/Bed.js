@@ -50,7 +50,7 @@ class Bed extends Component {
                       onChange={this.handleChange}
                     />
                   </Form.Field>
-                  <Link to="/quote"><Button onClick={this.handleSubmit} type='submit'>Next!</Button></Link>
+                  <Link to="/beMindful"><Button onClick={this.handleSubmit} type='submit'>Next!</Button></Link>
                 </Form.Group>
               </Form>
             </Grid.Column>
