@@ -31,7 +31,7 @@ class Bed extends Component {
                     "If you make your bed every morning, you will have accomplished the first task of the day. It will give you a small sense of pride, and it will encourage you to do another task and another and another."<br></br>
                     ~ Naval Admiral William McRaven ~
                   </p>
-                  <h2>So, did you make your bed?</h2>
+                  <h3>So, did you make your bed?</h3>
                   <Form.Field>
                     <Radio
                       label='Sure did!'
