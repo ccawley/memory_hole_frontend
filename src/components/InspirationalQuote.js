@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Form, Button } from 'semantic-ui-react';
+import { Grid, Form, Button, Responsive } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 function InspirationalQuote(props) {
@@ -11,14 +11,14 @@ function InspirationalQuote(props) {
   // }
 
   return (
-    // <Responsive {...Responsive.onlyComputer}>
+    <Responsive {...Responsive.onlyMobile}>
       <Grid>
         <Grid.Row centered>
           <Grid.Column textAlign='center' width={13} className='dailyCard'>
             <h1>You're off to a<br></br>great start!</h1>
             <h2>Now, take 10 minutes to give your brain some morning love. Allow it wake up slowly and mindfully.</h2>
             <p>
-              Make a batch of coffee or some tea, show some love to your four legged friend or take a warm shower. Whatever helps you get in a good headspace and feeling happy is fanastic!
+              Make a batch of coffee or some tea, show some love to your four legged friend or sit and meditate. Whatever helps you get in a good headspace and feeling happy is fanastic!
             </p>
             <h3>Let this quote be an inspiration for your day.</h3>
             <h3>{props.quote}</h3>
@@ -27,7 +27,7 @@ function InspirationalQuote(props) {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-    // </Responsive>
+    </Responsive>
   );
 }
 
