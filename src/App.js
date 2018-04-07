@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 // ---- LIST OF COMPONENTS ----
 import NavBar from './components/NavBar'
 import Bed from './components/Bed'
 import InspirationalQuote from './components/InspirationalQuote'
+import Gratitudes from './components/Gratitudes'
 
 import './App.css';
 import axios from 'axios';
@@ -48,16 +50,26 @@ class App extends Component {
   }
 
   updateState = (value) => {
-    this.setState({ didMakeBed: value })
+    this.setState(value)
   }
 
   render() {
+    console.log('something', this.state);
     return (
-      <div className="Container">
-        <NavBar />
-        <Bed didMakeBed={this.state.didMakeBed} onSubmit={this.updateState}/>
-        <InspirationalQuote quote={this.state.inspirationalQuote} author={this.state.quoteAuthor}/>
-      </div>
+      <BrowserRouter>
+        <div className="Container">
+          <NavBar />
+          <Route path='/bed' render={props => (
+            <Bed didMakeBed={this.state.didMakeBed} onSubmit={this.updateState} {...props} />
+          )} />
+          <Route path='/quote' render={props => (
+            <InspirationalQuote quote={this.state.inspirationalQuote} author={this.state.quoteAuthor} {...props} />
+          )} />
+          <Route path='/gratitudes' render={props => (
+            <Gratitudes {...props} />
+          )} />
+        </div>
+      </BrowserRouter>
     );
   }
 }
