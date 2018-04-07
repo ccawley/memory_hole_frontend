@@ -54,15 +54,14 @@ class App extends Component {
   }
 
   render() {
-    console.log('something', this.state);
     return (
       <BrowserRouter>
         <div className="Container">
           <NavBar />
-          <Route path='/bed' render={props => (
+          <Route path='/firstVictory' render={props => (
             <Bed didMakeBed={this.state.didMakeBed} onSubmit={this.updateState} {...props} />
           )} />
-          <Route path='/quote' render={props => (
+          <Route path='/beMindful' render={props => (
             <InspirationalQuote quote={this.state.inspirationalQuote} author={this.state.quoteAuthor} {...props} />
           )} />
           <Route path='/gratitudes' render={props => (
