@@ -3,23 +3,26 @@ import { Grid, Form, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 function InspirationalQuote(props) {
-  console.log(props);
+  // handle bad quote requests or missing authors...
+  // if (props.author === '') props.author = 'Unknown'
+  // if (props.quote === '' && props.author === '') {
+  //   props.quote = '“There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.”'
+  //   props.author = 'Albert Einstein'
+  // }
+
   return (
     // <Responsive {...Responsive.onlyComputer}>
       <Grid>
         <Grid.Row centered>
-          <Grid.Column textAlign='center' width={8} className='dailyCard'>
-            <h1>Congrats! Now wake up with some chill time.</h1>
+          <Grid.Column textAlign='center' width={13} className='dailyCard'>
+            <h1>You're off to a<br></br>great start!</h1>
+            <h2>Now, take 10 minutes to give your brain some morning love. Allow it wake up slowly and mindfully.</h2>
             <p>
-              {/* You're off to a great start on this beautiful day.<br></br> */}
-              Reward yourself by waking up for the next 10 minutes doing<br></br>something you enjoy that doesn't take much concentration.<br></br>
+              Make a batch of coffee or some tea, show some love to your four legged friend or take a warm shower. Whatever helps you get in a good headspace and feeling happy is fanastic!
             </p>
-            <p>
-              Make a batch of coffee or some tea, take a hot shower.<br></br>Whatever helps you get in a good headspace and feeling happy.
-            </p>
-            <p>Here's an inspirational quote to ponder as you let your mind awake.</p>
-            <p>{props.quote}</p>
-            <p>~ {props.author} ~</p>
+            <h3>Let this quote be an inspiration for your day.</h3>
+            <h3>{props.quote}</h3>
+            <h3>~ {props.author} ~</h3>
             <Link to="/gratitudes"><Button>Next!</Button></Link>
           </Grid.Column>
         </Grid.Row>
