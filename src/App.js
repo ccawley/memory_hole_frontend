@@ -7,6 +7,7 @@ import Bed from './components/Bed'
 import InspirationalQuote from './components/InspirationalQuote'
 import Gratitudes from './components/Gratitudes'
 import DailyGoal from './components/DailyGoal'
+import FuelYourDay from './components/FuelYourDay'
 
 import './App.css';
 import axios from 'axios';
@@ -70,6 +71,9 @@ class App extends Component {
           )} />
           <Route path='/dailyGoal' render={props => (
             <DailyGoal {...props} />
+          )} />
+          <Route path='/fuelYourDay' render={props => (
+            <FuelYourDay {...props} />
           )} />
         </div>
       </BrowserRouter>
