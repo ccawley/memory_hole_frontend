@@ -9,7 +9,6 @@ class Gratitudes extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <Responsive {...Responsive.onlyMobile}>
         <Grid>

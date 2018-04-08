@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import { Grid, Form, Button, Responsive } from 'semantic-ui-react';
+import { Grid, Button, Responsive } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 function InspirationalQuote(props) {
-  // handle bad quote requests or missing authors...
-  // if (props.author === '') props.author = 'Unknown'
-  // if (props.quote === '' && props.author === '') {
-  //   props.quote = '“There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.”'
-  //   props.author = 'Albert Einstein'
-  // }
 
   return (
     <Responsive {...Responsive.onlyMobile}>

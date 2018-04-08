@@ -3,7 +3,9 @@ import { Grid, Form, Button, Radio, Responsive } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 class Bed extends Component {
+
   state = {}
+
   handleChange = (e, { value }) => this.setState({ value })
 
   handleSubmit = (e) => {
@@ -13,7 +15,6 @@ class Bed extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <Responsive {...Responsive.onlyMobile}>
         <Grid>

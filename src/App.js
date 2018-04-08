@@ -41,10 +41,26 @@ class App extends Component {
   getQuote = async () => {
     try {
       let quote = await axios.get('http://localhost:8000/quote')
-      this.setState({
-        inspirationalQuote: quote.data.quoteText,
-        quoteAuthor: quote.data.quoteAuthor
-      })
+      console.log('got quote', quote.data);
+      // handle empty quote requests or missing authors first...
+      if (quote.data.quoteAuthor === "") {
+        console.log('no author', quote.data);
+        this.setState({
+          inspirationalQuote: quote.data.quoteText,
+          quoteAuthor: 'Unknown'
+        })
+      } else if (quote.data.quoteText === "" && quote.data.quoteAuthor === "") {
+        console.log('bad quote', quote.data);
+        this.setState({
+          inspirationalQuote: '“There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.”',
+          quoteAuthor: 'Albert Einstein'
+        })
+      } else {
+        this.setState({
+          inspirationalQuote: quote.data.quoteText,
+          quoteAuthor: quote.data.quoteAuthor
+        })
+      }
     }
     catch (err) {
       console.error(err)

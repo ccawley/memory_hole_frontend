@@ -3,7 +3,9 @@ import { Grid, Form, Radio, Button, Responsive } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 class FuelYourDay extends Component {
+
   state = {}
+  
   handleChange = (e, { value }) => this.setState({ value })
 
   handleSubmit = (e) => {
@@ -11,7 +13,6 @@ class FuelYourDay extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <Responsive {...Responsive.onlyMobile}>
         <Grid>
