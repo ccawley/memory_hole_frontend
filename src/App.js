@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 // ---- LIST OF COMPONENTS ----
-import NavBar from './components/NavBar'
+import Header from './components/NavBar'
 import Bed from './components/Bed'
 import InspirationalQuote from './components/InspirationalQuote'
 import Gratitudes from './components/Gratitudes'
 import DailyGoal from './components/DailyGoal'
 import FuelYourDay from './components/FuelYourDay'
+//import SideBar from './components/SideBar'
 
 import './App.css';
 import axios from 'axios';
@@ -75,7 +76,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="Container">
-          <NavBar />
+          <Header />
           <Route path='/firstVictory' render={props => (
             <Bed didMakeBed={this.state.didMakeBed} onSubmit={this.updateState} {...props} />
           )} />
