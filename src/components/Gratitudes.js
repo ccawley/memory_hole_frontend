@@ -17,12 +17,12 @@ class Gratitudes extends Component {
             <Grid.Column textAlign='center' width={13} className='dailyCard'>
               <Form>
                 <Form.Group grouped>
-                  <h1>Morning Gratitudes</h1>
-                  <h3>Take a moment to think about some things that you are grateful for. Briefly tell me about them below.</h3>
-                  <TextArea autoHeight placeholder='What are you thankful for today?' rows={1} onSubmit={this.props.onSubmit} />
-                  <TextArea autoHeight placeholder='What ELSE are you thankful for today?' rows={1} onSubmit={this.props.onSubmit} />
-                  <TextArea autoHeight placeholder='One more gratitude, you got this!' rows={1} onSubmit={this.props.onSubmit} />
-                  <h3>Remember, being happy and grateful is a choice you make daily. Only you can give yourself that gift so be the light you want to see in the world.</h3>
+                  <h1>Now, think thankfully!</h1>
+                  <h2>Take a moment to think about some things that you are grateful for. Briefly tell me about them below.</h2>
+                  <TextArea placeholder='What are you thankful for today?' rows={1} onSubmit={this.props.onSubmit} />
+                  <TextArea placeholder='What ELSE are you thankful for today?' rows={1} onSubmit={this.props.onSubmit} />
+                  <TextArea placeholder='One more gratitude, you got this!' rows={1} onSubmit={this.props.onSubmit} />
+                  <h4>Remember, being happy and grateful is a choice you make daily. Accept that you while you can't control everything, you CAN choose to give yourself the gift of being the happiest version of yourself that you can be. Thinking gratefully and positively will go a long way in acheiving this.</h4>
                   <Link to="/dailyGoal"><Button type='submit'>Next!</Button></Link>
                 </Form.Group>
               </Form>
