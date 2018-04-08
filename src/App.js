@@ -6,6 +6,7 @@ import NavBar from './components/NavBar'
 import Bed from './components/Bed'
 import InspirationalQuote from './components/InspirationalQuote'
 import Gratitudes from './components/Gratitudes'
+import DailyGoal from './components/DailyGoal'
 
 import './App.css';
 import axios from 'axios';
@@ -66,6 +67,9 @@ class App extends Component {
           )} />
           <Route path='/gratitudes' render={props => (
             <Gratitudes {...props} />
+          )} />
+          <Route path='/dailyGoal' render={props => (
+            <DailyGoal {...props} />
           )} />
         </div>
       </BrowserRouter>
