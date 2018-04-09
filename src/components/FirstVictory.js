@@ -20,7 +20,7 @@ class FirstVictory extends Component {
         <Grid>
           <Grid.Row centered>
             <Grid.Column textAlign='center' width={13} className='dailyCard'>
-              <Form onSubmit={this.handleSubmit}>
+              <Form>
                 <Form.Group grouped>
                   <h1>Good Morning!</h1>
                   <h2>Start your day with your first victory, I promise it will be easy...</h2>
