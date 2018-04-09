@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Button, Responsive } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
-function InspirationalQuote(props) {
+function AwakeMindfully(props) {
 
   return (
     <Responsive {...Responsive.onlyMobile}>
@@ -17,7 +17,7 @@ function InspirationalQuote(props) {
             <h3>Let this quote be an inspiration for your day.</h3>
             <h3>{props.quote}</h3>
             <h3>~ {props.author} ~</h3>
-            <Link to="/gratitudes"><Button>Next!</Button></Link>
+            <Link to="/morningGratitudes"><Button>Next!</Button></Link>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -25,4 +25,4 @@ function InspirationalQuote(props) {
   );
 }
 
-export default InspirationalQuote;
+export default AwakeMindfully;

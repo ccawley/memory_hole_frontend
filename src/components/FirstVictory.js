@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Form, Button, Radio, Responsive } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
-class Bed extends Component {
+class FirstVictory extends Component {
 
   state = {}
 
@@ -62,4 +62,4 @@ class Bed extends Component {
   }
 }
 
-export default Bed;
+export default FirstVictory;

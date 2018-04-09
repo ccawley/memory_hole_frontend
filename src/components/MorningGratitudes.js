@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Form, TextArea, Button, Responsive } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
-class Gratitudes extends Component {
+class MorningGratitudes extends Component {
 
   handleSubmit = (e, {value}) => {
     this.props.onSubmit(value)
@@ -33,4 +33,4 @@ class Gratitudes extends Component {
   }
 }
 
-export default Gratitudes;
+export default MorningGratitudes;

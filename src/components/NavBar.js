@@ -6,8 +6,10 @@ function HeaderMenu() {
 
   return (
     <Responsive {...Responsive.onlyMobile}>
-      <Menu color='inverted'>
-        <Menu.Item header>MemoryHole</Menu.Item>
+      <Menu>
+        <Link to='/home'>
+          <Menu.Item header>MemoryHole</Menu.Item>
+        </Link> 
 
         <Menu.Menu position='right'>
           <Dropdown item icon='content'>

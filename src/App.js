@@ -3,9 +3,9 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 // ---- LIST OF COMPONENTS ----
 import Header from './components/NavBar'
-import Bed from './components/Bed'
-import InspirationalQuote from './components/InspirationalQuote'
-import Gratitudes from './components/Gratitudes'
+import FirstVictory from './components/FirstVictory'
+import AwakeMindfully from './components/AwakeMindfully'
+import MorningGratitudes from './components/MorningGratitudes'
 import DailyGoal from './components/DailyGoal'
 import FuelYourDay from './components/FuelYourDay'
 //import SideBar from './components/SideBar'
@@ -80,13 +80,13 @@ class App extends Component {
         <div className="Container">
           <Header />
           <Route path='/firstVictory' render={props => (
-            <Bed didMakeBed={this.state.didMakeBed} onSubmit={this.updateState} {...props} />
+            <FirstVictory didMakeBed={this.state.didMakeBed} onSubmit={this.updateState} {...props} />
           )} />
           <Route path='/beMindful' render={props => (
-            <InspirationalQuote quote={this.state.inspirationalQuote} author={this.state.quoteAuthor} {...props} />
+            <AwakeMindfully quote={this.state.inspirationalQuote} author={this.state.quoteAuthor} {...props} />
           )} />
-          <Route path='/gratitudes' render={props => (
-            <Gratitudes {...props} />
+          <Route path='/morningGratitudes' render={props => (
+            <MorningGratitudes {...props} />
           )} />
           <Route path='/dailyGoal' render={props => (
             <DailyGoal {...props} />
