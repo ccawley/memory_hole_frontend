@@ -42,7 +42,6 @@ class App extends Component {
   getQuote = async () => {
     try {
       let quote = await axios.get('http://localhost:8000/quote')
-      console.log('got quote', quote.data);
       // handle empty quote requests or missing authors first...
       if (quote.data.quoteAuthor === "") {
         console.log('no author', quote.data);
