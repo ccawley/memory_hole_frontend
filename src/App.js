@@ -12,6 +12,7 @@ import FuelYourDay from './components/FuelYourDay'
 import Lessons from './components/Lessons'
 import WinsBrags from './components/WinsBrags'
 import EveningGratitudes from './components/EveningGratitudes'
+import Journal from './components/Journal'
 
 import './App.css';
 import axios from 'axios';
@@ -102,6 +103,9 @@ class App extends Component {
           )} />
           <Route path='/eveningGratitudes' render={props => (
             <EveningGratitudes {...props} />
+          )} />
+          <Route path='/journal' render={props => (
+            <Journal {...props} />
           )} />
         </div>
       </BrowserRouter>
