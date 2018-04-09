@@ -10,6 +10,7 @@ import DailyGoal from './components/DailyGoal'
 import FuelYourDay from './components/FuelYourDay'
 //import SideBar from './components/SideBar'
 import Lessons from './components/Lessons'
+import WinsBrags from './components/WinsBrags'
 
 import './App.css';
 import axios from 'axios';
@@ -94,6 +95,9 @@ class App extends Component {
           )} />
           <Route path='/lessons' render={props => (
             <Lessons {...props} />
+          )} />
+          <Route path='/wins&brags' render={props => (
+            <WinsBrags {...props} />
           )} />
         </div>
       </BrowserRouter>
