@@ -22,7 +22,7 @@ class App extends Component {
     super();
     this.state = {
       date: '',
-      didMakeBed: false,
+      didMakeBed: 'false',
       inspirationalQuote: '',
       quoteAuthor: '',
       meditationActivity: '',
@@ -33,9 +33,9 @@ class App extends Component {
       goalMicrotarget1: '',
       goalMicrotarget2: '',
       goalMicrotarget3: '',
-      selfieUrl: '',
-      hadBreakfast: false,
-      didExercise: false,
+      //selfieUrl: '',
+      hadBreakfast: 'false',
+      didExercise: 'false',
     }
   }
 
@@ -87,7 +87,7 @@ class App extends Component {
             <AwakeMindfully quote={this.state.inspirationalQuote} author={this.state.quoteAuthor} {...props} />
           )} />
           <Route path='/morningGratitudes' render={props => (
-            <MorningGratitudes {...props} />
+            <MorningGratitudes onSubmit={this.updateState} {...props} />
           )} />
           <Route path='/dailyGoal' render={props => (
             <DailyGoal {...props} />

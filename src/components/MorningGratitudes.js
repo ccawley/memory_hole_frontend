@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import { Grid, Form, TextArea, Button, Responsive } from 'semantic-ui-react';
+import { Grid, Form, Button, Responsive } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 class MorningGratitudes extends Component {
 
   state = { gratitude1: '', gratitude2: '', gratitude3: '' }
 
-  handleChange = (e, { gratitude1, value }) => this.setState({ [gratitude1]: value })
+  handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
   handleSubmit = () => {
     const { gratitude1, gratitude2, gratitude3 } = this.state
 
     this.props.onSubmit({
-      gratitude1: this.state.gratitude1,
-      gratitude2: this.state.gratitude2,
-      gratitude3: this.state.gratitude3,
+      gratitude1,
+      gratitude2,
+      gratitude3
     })
     // this.setState({ submittedName: name, submittedEmail: email })
   }
@@ -43,21 +43,21 @@ class MorningGratitudes extends Component {
                     placeholder='What are you thankful for today?'
                     rows={1}
                     name='gratitude1'
-                    value={gratitude1}
+                    value={this.state.gratitude1}
                     onChange={this.handleChange}
                   />
                   <Form.Input
                     placeholder='What ELSE are you thankful for today?'
                     rows={1}
                     name='gratitude2'
-                    value={gratitude2}
+                    value={this.state.gratitude2}
                     onChange={this.handleChange}
                   />
                   <Form.Input
                     placeholder='One more gratitude, you got this!'
                     rows={1}
                     name='gratitude3'
-                    value={gratitude3}
+                    value={this.state.gratitude3}
                     onChange={this.handleChange}
                   />
                   <h4>Remember, being happy and grateful is a choice you make daily. Accept that you while you can't control everything, you CAN choose to give yourself the gift of being the happiest version of yourself that you can be. Thinking gratefully and positively will go a long way in acheiving this.</h4>
