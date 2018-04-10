@@ -21,7 +21,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      date: '',
+      // date: '',
       didMakeBed: false,
       inspirationalQuote: '',
       quoteAuthor: '',
@@ -36,6 +36,14 @@ class App extends Component {
       // selfieUrl: '',
       hadBreakfast: false,
       didExercise: false,
+      // picOfTheDayUrl: '',
+      lessonsLearned: '',
+      winsBrags: '',
+      gratitude4: '',
+      gratitude5: '',
+      gratitude6: '',
+      journalEntry: '',
+      // historicalQuote: '',
     }
   }
 
