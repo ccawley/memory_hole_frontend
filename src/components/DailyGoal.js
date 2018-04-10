@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Form, TextArea, Button, Responsive } from 'semantic-ui-react';
+import { Grid, Form, Button, Responsive } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 class DailyGoal extends Component {
