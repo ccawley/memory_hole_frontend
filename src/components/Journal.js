@@ -4,8 +4,16 @@ import { Link } from 'react-router-dom';
 
 class Journal extends Component {
 
-  handleSubmit = (e, {value}) => {
-    this.props.onSubmit(value)
+  state = { journalEntry: '' }
+
+  handleChange = (e, { name, value }) => this.setState({ [name]: value })
+
+  handleSubmit = () => {
+    const { journalEntry } = this.state
+
+    this.props.onSubmit({
+      journalEntry
+    })
   }
 
   render() {
@@ -18,9 +26,15 @@ class Journal extends Component {
                 <Form.Group grouped>
                   <h1>Jog down some memories!</h1>
                   <h2>Well, another day is in the books. If you look back on this day 10 years from now what could you put in words that would help spark some memories of what today was like?</h2>
-                  <TextArea placeholder='Tell me about your day...' rows={5} onSubmit={this.props.onSubmit} />
+                  <TextArea
+                    placeholder='Tell me about your day...'
+                    name='journalEntry'
+                    rows={5}
+                    value={this.state.journalEntry}
+                    onChange={this.handleChange}
+                  />
                   <h3>Nice!</h3>
-                  <Link to="/home"><Button type='submit'>Home</Button></Link>
+                  <Link to="/home"><Button type='submit' onClick={this.handleSubmit}>Home</Button></Link>
                 </Form.Group>
               </Form>
             </Grid.Column>
