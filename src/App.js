@@ -25,7 +25,7 @@ class App extends Component {
       didMakeBed: 'false',
       inspirationalQuote: '',
       quoteAuthor: '',
-      meditationActivity: '',
+      // meditationActivity: '',
       gratitude1: '',
       gratitude2: '',
       gratitude3: '',
@@ -90,22 +90,22 @@ class App extends Component {
             <MorningGratitudes onSubmit={this.updateState} {...props} />
           )} />
           <Route path='/dailyGoal' render={props => (
-            <DailyGoal {...props} />
+            <DailyGoal onSubmit={this.updateState} {...props} />
           )} />
           <Route path='/fuelYourDay' render={props => (
-            <FuelYourDay {...props} />
+            <FuelYourDay onSubmit={this.updateState} {...props} />
           )} />
           <Route path='/lessons' render={props => (
-            <Lessons {...props} />
+            <Lessons onSubmit={this.updateState} {...props} />
           )} />
           <Route path='/wins&brags' render={props => (
-            <WinsBrags {...props} />
+            <WinsBrags onSubmit={this.updateState} {...props} />
           )} />
           <Route path='/eveningGratitudes' render={props => (
-            <EveningGratitudes {...props} />
+            <EveningGratitudes onSubmit={this.updateState} {...props} />
           )} />
           <Route path='/journal' render={props => (
-            <Journal {...props} />
+            <Journal onSubmit={this.updateState} {...props} />
           )} />
         </div>
       </BrowserRouter>
