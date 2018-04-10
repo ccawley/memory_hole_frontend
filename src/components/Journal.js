@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 
 class Journal extends Component {
 
-  state = { journalEntry: '' }
+  state = { journal_entry: '' }
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
   handleSubmit = () => {
-    const { journalEntry } = this.state
+    const { journal_entry } = this.state
 
     this.props.onSubmit({
-      journalEntry
+      journal_entry
     })
   }
 
@@ -28,9 +28,9 @@ class Journal extends Component {
                   <h2>Well, another day is in the books. If you look back on this day 10 years from now what could you put in words that would help spark some memories of what today was like?</h2>
                   <TextArea
                     placeholder='Tell me about your day...'
-                    name='journalEntry'
+                    name='journal_entry'
                     rows={5}
-                    value={this.state.journalEntry}
+                    value={this.state.journal_entry}
                     onChange={this.handleChange}
                   />
                   <h3>Nice!</h3>

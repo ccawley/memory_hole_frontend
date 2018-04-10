@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom';
 
 class DailyGoal extends Component {
 
-  state = { dailyGoal: '', goalMicrotarget1: '', goalMicrotarget2: '', goalMicrotarget3: '' }
+  state = { daily_goal: '', goal_microtarget_1: '', goal_microtarget_2: '', goal_microtarget_3: '' }
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
   handleSubmit = () => {
-    const { dailyGoal, goalMicrotarget1, goalMicrotarget2, goalMicrotarget3 } = this.state
+    const { daily_goal, goal_microtarget_1, goal_microtarget_2, goal_microtarget_3 } = this.state
 
     this.props.onSubmit({
-      dailyGoal,
-      goalMicrotarget1,
-      goalMicrotarget2,
-      goalMicrotarget3
+      daily_goal,
+      goal_microtarget_1,
+      goal_microtarget_2,
+      goal_microtarget_3
     })
   }
 
@@ -31,30 +31,30 @@ class DailyGoal extends Component {
                   <h2>When you crawl into bed tonight, what is the one thing you hope to have accomplished today?</h2>
                   <Form.Input
                     placeholder='What is your goal today?'
-                    name='dailyGoal'
-                    value={this.state.dailyGoal}
+                    name='daily_goal'
+                    value={this.state.daily_goal}
                     onChange={this.handleChange}
                   />
                   <h3>It's easier to acheive a goal if you break it down. What three steps will you take to reach your goal today?</h3>
                   <Form.TextArea
                     placeholder='Step 1'
-                    name='goalMicrotarget1'
+                    name='goal_microtarget_1'
                     rows={1}
-                    value={this.state.goalMicrotarget1}
+                    value={this.state.goal_microtarget_1}
                     onChange={this.handleChange}
                   />
                   <Form.TextArea
                     placeholder='Step 2...'
-                    name='goalMicrotarget2'
+                    name='goal_microtarget_2'
                     rows={1}
-                    value={this.state.goalMicrotarget2}
+                    value={this.state.goal_microtarget_2}
                     onChange={this.handleChange}
                   />
                   <Form.TextArea
                     placeholder='Step 3...'
-                    name='goalMicrotarget3'
+                    name='goal_microtarget_3'
                     rows={1}
-                    value={this.state.goalMicrotarget3}
+                    value={this.state.goal_microtarget_3}
                     onChange={this.handleChange}
                   />
                   <h3>Allright! You can do that!</h3>

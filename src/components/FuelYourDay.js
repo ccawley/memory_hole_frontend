@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 class FuelYourDay extends Component {
 
-  state = {didExercise: false, hadBreakfast: false}
+  state = {did_exercise: false, had_breakfast: false}
 
   // handleChange = (e, { name, value }) => {
   //   this.setState({ [name]: value })
@@ -12,22 +12,22 @@ class FuelYourDay extends Component {
 
   handleExerciseChange = (e, { name, value }) => {
     this.setState({
-      didExercise: !this.state.didExercise
+      did_exercise: !this.state.did_exercise
     })
   }
 
   handleBreakfastChange = (e, { name, value }) => {
     this.setState({
-      hadBreakfast: !this.state.hadBreakfast
+      had_breakfast: !this.state.had_breakfast
     })
   }
 
   handleSubmit = (e) => {
-    const { didExercise, hadBreakfast } = this.state
+    const { did_exercise, had_breakfast } = this.state
 
     this.props.onSubmit({
-      didExercise,
-      hadBreakfast
+      did_exercise,
+      had_breakfast
     })
   }
 
@@ -45,11 +45,11 @@ class FuelYourDay extends Component {
                   <Form.Field>
                     <Checkbox
                       toggle
-                      name='didExercise'
+                      name='did_exercise'
                       label='Yes'
                       control='input'
                       value='true'
-                      checked={this.state.didExercise === true}
+                      checked={this.state.did_exercise === true}
                       onChange={this.handleExerciseChange}
                     />
                   </Form.Field>
@@ -57,11 +57,11 @@ class FuelYourDay extends Component {
                   <Form.Field>
                     <Checkbox
                       toggle
-                      name='hadBreakfast'
+                      name='had_breakfast'
                       label='Yes'
                       control='input'
                       value='true'
-                      checked={this.state.hadBreakfast === true}
+                      checked={this.state.had_breakfast === true}
                       onChange={this.handleBreakfastChange}
                     />
                   </Form.Field>

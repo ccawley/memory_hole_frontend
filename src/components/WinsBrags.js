@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 
 class WinsBrags extends Component {
 
-  state = { winsBrags: '' }
+  state = { wins_brags: '' }
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
   handleSubmit = () => {
-    const { winsBrags } = this.state
+    const { wins_brags } = this.state
 
     this.props.onSubmit({
-      winsBrags
+      wins_brags
     })
   }
 
@@ -28,9 +28,9 @@ class WinsBrags extends Component {
                   <h2>Give yourself some credit, you deserve it. Go on, what wins did you have today? Go ahead and brag about yourself!</h2>
                   <TextArea
                     placeholder='What are you proud of yourself today for...'
-                    name='winsBrags'
+                    name='wins_brags'
                     rows={5}
-                    value={this.state.winsBrags}
+                    value={this.state.wins_brags}
                     onChange={this.handleChange}
                   />
                   <h3>Positive reinforcement will allow you to be happier, more confident and more loving of yourself.</h3>

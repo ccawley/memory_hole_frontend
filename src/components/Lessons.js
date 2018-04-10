@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 
 class Lessons extends Component {
 
-  state = { lessonsLearned: '' }
+  state = { lessons_learned: '' }
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
   handleSubmit = () => {
-    const { lessonsLearned } = this.state
+    const { lessons_learned } = this.state
 
     this.props.onSubmit({
-      lessonsLearned
+      lessons_learned
     })
   }
 
@@ -28,9 +28,9 @@ class Lessons extends Component {
                   <h2>Now is your moment to reflect on your day and describe any lessons you learned. Were there opportunities where you feel like you could have done something differently?</h2>
                   <Form.TextArea
                     placeholder='What, if any, lessons did you learn today that you want to remember going forward?'
-                    name='lessonsLearned'
+                    name='lessons_learned'
                     rows={5}
-                    value={this.state.lessonsLearned}
+                    value={this.state.lessons_learned}
                     onChange={this.handleChange}
                   />
                   <h3>Remember, mistakes are only mistakes if you didn't learn anything from them.</h3>

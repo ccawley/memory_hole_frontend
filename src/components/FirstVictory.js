@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom';
 
 class FirstVictory extends Component {
 
-  state = {didMakeBed: false}
+  state = {did_make_bed: false}
 
   handleBedChange = (e, { name, value }) => {
     this.setState({
-      didMakeBed: !this.state.didMakeBed
+      did_make_bed: !this.state.did_make_bed
     })
   }
 
   handleSubmit = (e) => {
-    const { didMakeBed } = this.state
+    const { did_make_bed } = this.state
 
     this.props.onSubmit({
-      didMakeBed
+      did_make_bed
     })
   }
 
@@ -24,7 +24,7 @@ class FirstVictory extends Component {
   //
   // handleSubmit = (e) => {
   //   // console.log('submit?', this.props);
-  //   this.props.onSubmit({ didMakeBed: this.state.value })
+  //   this.props.onSubmit({ did_make_bed: this.state.value })
   //   // this.props.history.go('/quote')
   // }
 
@@ -50,11 +50,11 @@ class FirstVictory extends Component {
                   <Form.Field>
                     <Checkbox
                       toggle
-                      name='didMakeBed'
+                      name='did_make_bed'
                       label='Aw yeah!'
                       control='input'
                       value='true'
-                      checked={this.state.didMakeBed === true}
+                      checked={this.state.did_make_bed === true}
                       onChange={this.handleBedChange}
                     />
                   </Form.Field>
