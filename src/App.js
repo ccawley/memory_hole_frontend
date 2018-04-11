@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './components/Home';
-// import MorningRoutine from './components/MorningRoutine';
-// import EveningRoutine from './components/EveningRoutine';
+import MorningRoutine from './components/MorningRoutine';
+import EveningRoutine from './components/EveningRoutine';
 // import Header from './components/NavBar';
 import LoginForm from './components/SplashLogin';
 
@@ -12,15 +12,35 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      is_logged_in: false
+      is_logged_in: false,
+      user_id: null
     }
+  }
+
+  onLoginSubmit = (e) => {
+    e.preventDefault()
+    console.log(e.target.user.value, e.target.pass.value);
+    // post req
+    // set state with user data
   }
 
   render() {
     return (
       <BrowserRouter>
         <div className="Container">
-          {this.state.is_logged_in ? (<Home />) : (<LoginForm />)}
+          <Route path='/home' render={props => (
+            <Home />
+          )} />
+          <Route path='/login' render={props => (
+            <LoginForm onSubmit={this.onLoginSubmit}/>
+          )} />
+          <Route path='/morning' render={props => (
+            <MorningRoutine user_id={this.state.user_id}/>
+          )} />
+          <Route path='/evening' render={props => (
+            <EveningRoutine user_id={this.state.user_id}/>
+          )} />
+          {/* {this.state.is_logged_in ?  : <LoginForm />} */}
         </div>
         {/* <div className="Container">
               {this.state.isLoggedIn ? (
