@@ -5,6 +5,7 @@ import MorningRoutine from './components/MorningRoutine';
 import EveningRoutine from './components/EveningRoutine';
 // import Header from './components/NavBar';
 import LoginForm from './components/SplashLogin';
+import Registration from './components/Registration';
 
 import './App.css';
 
@@ -19,9 +20,16 @@ class App extends Component {
 
   onLoginSubmit = (e) => {
     e.preventDefault()
-    console.log(e.target.user.value, e.target.pass.value);
+    console.log(e.target.user_name.value, e.target.password.value);
     // post req
-    // set state with user data
+    // set state with user_id from db
+  }
+
+  onRegistrationSubmit = (e) => {
+    e.preventDefault()
+    console.log(e.target.user_name.value, e.target.first_name.value, e.target.password.value)
+    // post req
+    // set state with user_id from db
   }
 
   render() {
@@ -33,6 +41,9 @@ class App extends Component {
           )} />
           <Route path='/login' render={props => (
             <LoginForm onSubmit={this.onLoginSubmit}/>
+          )} />
+          <Route path='/register' render={props => (
+            <Registration onSubmit={this.onRegistrationSubmit}/>
           )} />
           <Route path='/morning' render={props => (
             <MorningRoutine user_id={this.state.user_id}/>
