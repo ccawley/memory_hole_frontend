@@ -12,19 +12,19 @@ const LoginForm = ({ onSubmit }) => (
             <Form.Field>
               <label>User Name:</label>
               <input
-                name='user'
+                name='user_name'
                 placeholder='Please enter user name...'
               />
             </Form.Field>
             <Form.Field>
               <label>Password:</label>
               <input
-                name='pass'
+                name='password'
                 type='password'
                 placeholder='Please enter password...'
               />
             </Form.Field>
-            <p>New user?<Link to="/home"> Register Here</Link></p>
+            <p>New user?<Link to="/register"> Register Here</Link></p>
             <Button type='submit'>Log In</Button>
           </Form>
         </Grid.Column>
