@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import MorningRoutine from './components/MorningRoutine';
 import EveningRoutine from './components/EveningRoutine';
 import Header from './components/NavBar';

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 // ---- LIST OF COMPONENTS ----
 import Lessons from './Lessons'
@@ -7,10 +7,10 @@ import WinsBrags from './WinsBrags'
 import EveningGratitudes from './EveningGratitudes'
 import Journal from './Journal'
 
-import axios from 'axios';
+// import axios from 'axios';
 
 //not deployed
-const baseURL = 'http://localhost:8000'
+// const baseURL = 'http://localhost:8000'
 
 //deployed
 // const baseURL = 'https://memory-hole.herokuapp.com/'
@@ -55,22 +55,20 @@ class MorningRoutine extends Component {
 
   render() {
     return (
-      // <BrowserRouter>
-        <div>
-          <Route path='/lessons' render={props => (
-            <Lessons onSubmit={this.updateState} {...props} />
-          )} />
-          <Route path='/wins&brags' render={props => (
-            <WinsBrags onSubmit={this.updateState} {...props} />
-          )} />
-          <Route path='/eveningGratitudes' render={props => (
-            <EveningGratitudes onSubmit={this.updateState} {...props} />
-          )} />
-          <Route path='/journal' render={props => (
-            <Journal onSubmit={this.updateState} {...props} />
-          )} />
-        </div>
-      // </BrowserRouter>
+      <div>
+        <Route path='/lessons' render={props => (
+          <Lessons onSubmit={this.updateState} {...props} />
+        )} />
+        <Route path='/wins&brags' render={props => (
+          <WinsBrags onSubmit={this.updateState} {...props} />
+        )} />
+        <Route path='/eveningGratitudes' render={props => (
+          <EveningGratitudes onSubmit={this.updateState} {...props} />
+        )} />
+        <Route path='/journal' render={props => (
+          <Journal onSubmit={this.updateState} {...props} />
+        )} />
+      </div>
     );
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 // ---- LIST OF COMPONENTS ----
 import FirstVictory from './FirstVictory'
@@ -91,25 +91,23 @@ class MorningRoutine extends Component {
 
   render() {
     return (
-      // <BrowserRouter>
-        <div>
-          <Route path='/firstVictory' render={props => (
-            <FirstVictory didMakeBed={this.state.did_make_bed} onSubmit={this.updateState} {...props} />
-          )} />
-          <Route path='/beMindful' render={props => (
-            <AwakeMindfully quote={this.state.inspirational_quote} author={this.state.quote_author} {...props} />
-          )} />
-          <Route path='/morningGratitudes' render={props => (
-            <MorningGratitudes onSubmit={this.updateState} {...props} />
-          )} />
-          <Route path='/dailyGoal' render={props => (
-            <DailyGoal onSubmit={this.updateState} {...props} />
-          )} />
-          <Route path='/fuelYourDay' render={props => (
-            <FuelYourDay onSubmit={this.updateFinalState} {...props} />
-          )} />
-        </div>
-      // </BrowserRouter>
+      <div>
+        <Route path='/firstVictory' render={props => (
+          <FirstVictory didMakeBed={this.state.did_make_bed} onSubmit={this.updateState} {...props} />
+        )} />
+        <Route path='/beMindful' render={props => (
+          <AwakeMindfully quote={this.state.inspirational_quote} author={this.state.quote_author} {...props} />
+        )} />
+        <Route path='/morningGratitudes' render={props => (
+          <MorningGratitudes onSubmit={this.updateState} {...props} />
+        )} />
+        <Route path='/dailyGoal' render={props => (
+          <DailyGoal onSubmit={this.updateState} {...props} />
+        )} />
+        <Route path='/fuelYourDay' render={props => (
+          <FuelYourDay onSubmit={this.updateFinalState} {...props} />
+        )} />
+      </div>
     );
   }
 }
