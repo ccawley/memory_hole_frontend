@@ -34,7 +34,7 @@ class Lessons extends Component {
                     onChange={this.handleChange}
                   />
                   <h3>Remember, mistakes are only mistakes if you didn't learn anything from them.</h3>
-                  <Link to="/wins&brags"><Button type='submit' onClick={this.handleSubmit}>Next!</Button></Link>
+                  <Link to="/evening/wins&brags"><Button type='submit' onClick={this.handleSubmit}>Next!</Button></Link>
                 </Form.Group>
               </Form>
             </Grid.Column>

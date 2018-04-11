@@ -58,7 +58,7 @@ class FirstVictory extends Component {
                       onChange={this.handleBedChange}
                     />
                   </Form.Field>
-                  <Link to="/beMindful"><Button type='submit' onClick={this.handleSubmit}>Next!</Button></Link>
+                  <Link to="/morning/beMindful"><Button type='submit' onClick={this.handleSubmit}>Next!</Button></Link>
                 </Form.Group>
               </Form>
             </Grid.Column>

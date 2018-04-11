@@ -58,16 +58,16 @@ class MorningRoutine extends Component {
   render() {
     return (
       <div>
-        <Route path='/lessons' render={props => (
+        <Route path='/evening/lessons' render={props => (
           <Lessons onSubmit={this.updateState} {...props} />
         )} />
-        <Route path='/wins&brags' render={props => (
+        <Route path='/evening/wins&brags' render={props => (
           <WinsBrags onSubmit={this.updateState} {...props} />
         )} />
-        <Route path='/eveningGratitudes' render={props => (
+        <Route path='/evening/eveningGratitudes' render={props => (
           <EveningGratitudes onSubmit={this.updateState} {...props} />
         )} />
-        <Route path='/journal' render={props => (
+        <Route path='/evening/journal' render={props => (
           <Journal onSubmit={this.updateState} {...props} />
         )} />
       </div>

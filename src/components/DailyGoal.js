@@ -58,7 +58,7 @@ class DailyGoal extends Component {
                     onChange={this.handleChange}
                   />
                   <h3>Allright! You can do that!</h3>
-                  <Link to="/fuelYourDay"><Button type='submit' onClick={this.handleSubmit}>Almost there!</Button></Link>
+                  <Link to="/morning/fuelYourDay"><Button type='submit' onClick={this.handleSubmit}>Almost there!</Button></Link>
                 </Form.Group>
               </Form>
             </Grid.Column>

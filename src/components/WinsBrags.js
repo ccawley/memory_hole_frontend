@@ -34,7 +34,7 @@ class WinsBrags extends Component {
                     onChange={this.handleChange}
                   />
                   <h3>Positive reinforcement will allow you to be happier, more confident and more loving of yourself.</h3>
-                  <Link to="/eveningGratitudes"><Button type='submit' onClick={this.handleSubmit}>Next!</Button></Link>
+                  <Link to="/evening/eveningGratitudes"><Button type='submit' onClick={this.handleSubmit}>Next!</Button></Link>
                 </Form.Group>
               </Form>
             </Grid.Column>

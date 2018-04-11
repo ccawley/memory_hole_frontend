@@ -47,7 +47,7 @@ class EveningGratitudes extends Component {
                     onChange={this.handleChange}
                   />
                   <h4>Remember, being happy and grateful is a choice you make daily. Accept that you while you can't control everything, you CAN choose to give yourself the gift of being the happiest version of yourself that you can be. Thinking gratefully and positively will go a long way in acheiving this.</h4>
-                  <Link to="/journal"><Button type='submit' onClick={this.handleSubmit}>Next!</Button></Link>
+                  <Link to="/evening/journal"><Button type='submit' onClick={this.handleSubmit}>Next!</Button></Link>
                 </Form.Group>
               </Form>
             </Grid.Column>
