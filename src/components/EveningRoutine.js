@@ -19,6 +19,8 @@ class MorningRoutine extends Component {
   constructor() {
     super();
     this.state = {
+      //...need to figure out how to get/store user_id after login
+      // user_id:
       // pic_of_the_day_url: '',
       lessons_learned: '',
       wins_brags: '',
