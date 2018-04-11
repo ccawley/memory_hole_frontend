@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Grid, Form, Checkbox, Button, Responsive } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
 
 class FuelYourDay extends Component {
 
