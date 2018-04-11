@@ -13,14 +13,14 @@ const Register = ({ onSubmit }) => (
               <label>User Name:</label>
               <input
                 name='user_name'
-                placeholder='Please enter user name...'
+                placeholder='Please enter a user name...'
               />
             </Form.Field>
             <Form.Field>
               <label>First Name:</label>
               <input
                 name='first_name'
-                placeholder='Please enter user name...'
+                placeholder='Please enter your first name...'
               />
             </Form.Field>
             <Form.Field>
@@ -28,7 +28,7 @@ const Register = ({ onSubmit }) => (
               <input
                 name='password'
                 type='password'
-                placeholder='Please enter password...'
+                placeholder='Please enter a password...'
               />
             </Form.Field>
             <Button type='submit'>Register</Button>
