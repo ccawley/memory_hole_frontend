@@ -83,10 +83,14 @@ class MorningRoutine extends Component {
   }
 
   postMorningData = () => {
-    console.log('we here', this.state);
-    axios.post(`${baseURL}/routines/morning`, this.state)
+    const postData = this.state
+    // Use this hardcoded for development for now...
+    postData.user_id = 1
+    // Eventually use this.props.user_id in the axios request...
+    axios.post(`${baseURL}/routine/morning`, postData)
       .then(res => {
         console.log('Stuff')
+        this.props.history.push('/home')
       })
       .catch(console.error)
   }

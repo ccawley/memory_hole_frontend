@@ -40,16 +40,16 @@ class App extends Component {
             <Home />
           )} />
           <Route path='/login' render={props => (
-            <LoginForm onSubmit={this.onLoginSubmit}/>
+            <LoginForm onSubmit={this.onLoginSubmit} />
           )} />
           <Route path='/register' render={props => (
-            <Registration onSubmit={this.onRegistrationSubmit}/>
+            <Registration onSubmit={this.onRegistrationSubmit} />
           )} />
           <Route path='/morning' render={props => (
-            <MorningRoutine user_id={this.state.user_id}/>
+            <MorningRoutine user_id={this.state.user_id} {...props} />
           )} />
           <Route path='/evening' render={props => (
-            <EveningRoutine user_id={this.state.user_id}/>
+            <EveningRoutine user_id={this.state.user_id} {...props} />
           )} />
           {/* {this.state.is_logged_in ?  : <LoginForm />} */}
         </div>
