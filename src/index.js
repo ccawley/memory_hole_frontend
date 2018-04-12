@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter, withRouter } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const RouterApp = withRouter(App)
+
+ReactDOM.render(<BrowserRouter><RouterApp/></BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();
