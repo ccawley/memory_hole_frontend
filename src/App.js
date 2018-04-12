@@ -8,6 +8,13 @@ import LoginForm from './components/SplashLogin';
 import Registration from './components/Registration';
 
 import './App.css';
+import axios from 'axios';
+
+//not deployed
+const baseURL = 'http://localhost:8000'
+
+//deployed
+// const baseURL = 'https://commit-m.herokuapp.com/'
 
 class App extends Component {
   constructor() {
@@ -27,9 +34,20 @@ class App extends Component {
 
   onRegistrationSubmit = (e) => {
     e.preventDefault()
-    console.log(e.target.user_name.value, e.target.first_name.value, e.target.password.value)
-    // post req
-    // set state with user_id from db
+
+    const postData = {
+      user_name: e.target.user_name.value,
+      first_name: e.target.first_name.value,
+      password: e.target.password.value
+    }
+
+    axios.post(`${baseURL}/user/createUser`, postData)
+      .then(result => {
+      // set state with user_id from db..
+        this.setState({ user_id: result.data.id })
+        this.props.history.push('/login')
+      })
+      .catch(console.error)
   }
 
   render() {
