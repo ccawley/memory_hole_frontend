@@ -20,28 +20,29 @@ class App extends Component {
   constructor() {
     super();
     // ---------------------------swap for deployed----------------------------
-    // this.state = {
-    //   is_logged_in: false,
-    //   user_id: null,
-    //   user_name: null,
-    //   first_name: null
-    //   currTemp: 0,
-    //   dayForecast: '',
-    //   weatherIcon: '',
-    //   highTemp: 0
-    // }
-    // ---------------------------swap when developing-------------------------
     this.state = {
-      is_logged_in: true,
-      user_id: 1,
-      user_name: 'Busey',
-      first_name: 'Gary',
+      is_logged_in: false,
+      user_id: null,
+      user_name: null,
+      first_name: null,
       currTemp: 0,
-      dayForecast: null,
-      weatherIcon: 'CLOUDY',
+      dayForecast: '',
+      weatherIcon: '',
       highTemp: 0
     }
   }
+    // ---------------------------swap when developing-------------------------
+  //   this.state = {
+  //     is_logged_in: true,
+  //     user_id: 1,
+  //     user_name: 'Busey',
+  //     first_name: 'Gary',
+  //     currTemp: 0,
+  //     dayForecast: null,
+  //     weatherIcon: 'CLOUDY',
+  //     highTemp: 0
+  //   }
+  // }
 
   onLoginSubmit = (e) => {
     e.preventDefault()
@@ -91,7 +92,7 @@ class App extends Component {
   getWeather = (latitude, longitude) => {
     axios.get(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${'6240cc42aaad1d910992a699a33d5d0a'}/${latitude},${longitude}`, {headers: {'x-requested-with': 'curl'}})
       .then(res => {
-        console.log(res)
+        // console.log(res)
         this.setState({
           currTemp: res.data.currently.temperature,
           dayForecast: res.data.hourly.summary,
@@ -103,14 +104,13 @@ class App extends Component {
   }
 
   getCoords = () => {
-    console.log('weather call?');
     // navigator.geolocation.getCurrentPosition(getCoor, errorCoor, {maximumAge:60000, timeout:5000, enableHighAccuracy:true});
     navigator.geolocation.getCurrentPosition(position => {
       let latitude = position.coords.latitude
       let longitude = position.coords.longitude
       this.getWeather(latitude, longitude)
     },err => {
-      console.log(err)
+      // console.log(err)
       this.getWeather(47.6, -122.33)
     }, {maximumAge:60000, timeout:100, enableHighAccuracy:true})
   }

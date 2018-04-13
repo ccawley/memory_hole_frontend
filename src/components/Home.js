@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Responsive, Header, Segment, Button } from 'semantic-ui-react';
+import { Grid, Responsive, Button } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import Skycons from 'react-skycons';
 const DateFormat = require('dateformat');
