@@ -6,10 +6,6 @@ const DateFormat = require('dateformat');
 const Now = new Date();
 
 class Home extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   render() {
     return (
       <Responsive {...Responsive.onlyMobile}>

@@ -7,15 +7,15 @@ import WinsBrags from './WinsBrags'
 import EveningGratitudes from './EveningGratitudes'
 import Journal from './Journal'
 
-// import axios from 'axios';
+import axios from 'axios';
 
 //not deployed
-// const baseURL = 'http://localhost:8000'
+const baseURL = 'http://localhost:8000'
 
 //deployed
 // const baseURL = 'https://memory-hole.herokuapp.com/'
 
-class MorningRoutine extends Component {
+class EveningRoutine extends Component {
   constructor() {
     super();
     this.state = {
@@ -32,28 +32,28 @@ class MorningRoutine extends Component {
     }
   }
 
-  componentDidMount() {
-
-  }
-
   updateState = (value) => {
     this.setState(value)
   }
 
-  // updateFinalState = (value) => {
-  //   this.setState(value, () => {
-  //     this.EveningData()
-  //   })
-  // }
+  updateFinalState = (value) => {
+    this.setState(value, () => {
+      this.postEveningData()
+    })
+  }
 
-  // postEveningData = () => {
-  //   console.log('we here', this.state);
-  //   axios.post(`${baseURL}/routines/evening`, this.state)
-  //     .then(res => {
-  //       console.log('Stuff')
-  //     })
-  //     .catch(console.error)
-  // }
+  postEveningData = () => {
+    const postData = this.state
+    // Use this hardcoded for development for now...
+    postData.user_id = 1
+    // Eventually use this.props.user_id in the axios request...
+    axios.post(`${baseURL}/routine/evening`, postData)
+      .then(res => {
+        console.log('Stuff')
+        this.props.history.push('/home')
+      })
+      .catch(console.error)
+  }
 
   render() {
     return (
@@ -68,11 +68,11 @@ class MorningRoutine extends Component {
           <EveningGratitudes onSubmit={this.updateState} {...props} />
         )} />
         <Route path='/evening/journal' render={props => (
-          <Journal onSubmit={this.updateState} {...props} />
+          <Journal onSubmit={this.updateFinalState} {...props} />
         )} />
       </div>
     );
   }
 }
 
-export default MorningRoutine;
+export default EveningRoutine;

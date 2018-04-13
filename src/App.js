@@ -111,13 +111,13 @@ class App extends Component {
     return (
       <div className="Container">
         <Route path='/home' render={props => (
-          <Home firstName={this.state.first_name}/>
+          <Home firstName={this.state.first_name} {...props}/>
         )} />
         <Route path='/login' render={props => (
-          <LoginForm onSubmit={this.onLoginSubmit} />
+          <LoginForm onSubmit={this.onLoginSubmit} {...props} />
         )} />
         <Route path='/register' render={props => (
-          <Registration onSubmit={this.onRegistrationSubmit} />
+          <Registration onSubmit={this.onRegistrationSubmit} {...props} />
         )} />
         <Route path='/morning' render={props => (
           <MorningRoutine user_id={this.state.user_id} {...props} />
