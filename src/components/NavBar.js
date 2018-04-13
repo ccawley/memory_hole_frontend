@@ -9,7 +9,7 @@ function HeaderMenu() {
       <Menu>
         <Link to='/home'>
           <Menu.Item header>MemoryHole</Menu.Item>
-        </Link> 
+        </Link>
 
         <Menu.Menu position='right'>
           <Dropdown item icon='content'>
@@ -24,26 +24,26 @@ function HeaderMenu() {
                   Calender
                 </Dropdown.Item>
               </Link>
-              <Link to="/firstVictory">
+              <Link to="/morning/firstVictory">
                 <Dropdown.Item name='startDay'>
                   Start Your Day
                 </Dropdown.Item>
               </Link>
-              <Link to="/picOfDay">
+              <Link to="/evening/picOfDay">
                 <Dropdown.Item name='endDay'>
                   End Your Day
                 </Dropdown.Item>
               </Link>
-              <Link to="/about">
+              {/* <Link to="/about">
                 <Dropdown.Item name='about'>
                   About / F.A.Q.
                 </Dropdown.Item>
-              </Link>
-              <Link to="/agelapse">
+              </Link> */}
+              {/* <Link to="/agelapse">
                 <Dropdown.Item name='agelapse'>
                   Agelapse
                 </Dropdown.Item>
-              </Link>
+              </Link> */}
               <Dropdown.Item name='logout'>
                 Logout
               </Dropdown.Item>
