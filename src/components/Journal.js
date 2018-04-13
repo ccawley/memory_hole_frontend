@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Grid, Form, TextArea, Button, Responsive } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
 
 class Journal extends Component {
 
@@ -34,7 +33,7 @@ class Journal extends Component {
                     onChange={this.handleChange}
                   />
                   <h3>Nice!</h3>
-                  <Link to="/home"><Button type='submit' onClick={this.handleSubmit}>Home</Button></Link>
+                  <Button type='submit' onClick={this.handleSubmit}>Home</Button>
                 </Form.Group>
               </Form>
             </Grid.Column>
