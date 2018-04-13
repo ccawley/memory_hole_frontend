@@ -2,7 +2,7 @@ import React from 'react'
 import { Dropdown, Menu, Responsive } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
-function HeaderMenu() {
+function HeaderMenu({ logout }) {
 
   return (
     <Responsive {...Responsive.onlyMobile}>
@@ -44,7 +44,7 @@ function HeaderMenu() {
                   Agelapse
                 </Dropdown.Item>
               </Link> */}
-              <Dropdown.Item name='logout'>
+              <Dropdown.Item name='logout' onClick={logout}>
                 Logout
               </Dropdown.Item>
             </Dropdown.Menu>

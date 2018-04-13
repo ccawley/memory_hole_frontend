@@ -117,6 +117,7 @@ class App extends Component {
 
   logout = () => {
     // localStorage.removeItem('token')
+    console.log("clicked logout app.js");
     this.setState({ is_logged_in: false})
     window.location.replace('/login')
   }
@@ -124,7 +125,7 @@ class App extends Component {
   render() {
     return (
       <div className="Container">
-        { this.state.is_logged_in ? <Header logout={ this.logout } /> : null}
+        { this.state.is_logged_in ? <Header logout={this.logout} /> : null}
         <Route path='/home' render={props => (
           <Home
             firstName={this.state.first_name}
