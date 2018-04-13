@@ -38,7 +38,7 @@ class App extends Component {
       first_name: 'Gary',
       currTemp: 0,
       dayForecast: null,
-      weatherIcon: '',
+      weatherIcon: 'CLOUDY',
       highTemp: 0
     }
   }
@@ -84,34 +84,49 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.getCoords()
     this.getWeather()
   }
 
-  getWeather = () => {
+  getWeather = (latitude, longitude) => {
+    axios.get(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${'6240cc42aaad1d910992a699a33d5d0a'}/${latitude},${longitude}`, {headers: {'x-requested-with': 'curl'}})
+      .then(res => {
+        console.log(res)
+        this.setState({
+          currTemp: res.data.currently.temperature,
+          dayForecast: res.data.hourly.summary,
+          weatherIcon: res.data.hourly.icon.toUpperCase(),
+          highTemp: res.data.daily.data[0].temperatureMax
+        })
+      })
+      .catch(console.error)
+  }
+
+  getCoords = () => {
+    console.log('weather call?');
+    // navigator.geolocation.getCurrentPosition(getCoor, errorCoor, {maximumAge:60000, timeout:5000, enableHighAccuracy:true});
     navigator.geolocation.getCurrentPosition(position => {
       let latitude = position.coords.latitude
       let longitude = position.coords.longitude
-      axios.get(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${'6240cc42aaad1d910992a699a33d5d0a'}/${latitude},${longitude}`, {headers: {'x-requested-with': 'curl'}})
-        .then(res => {
-          console.log(res)
-          this.setState({
-            currTemp: res.data.currently.temperature,
-            dayForecast: res.data.hourly.summary,
-            weatherIcon: res.data.hourly.icon,
-            highTemp: res.data.daily.data[0].temperatureMax
-          })
-        })
-        .catch(console.error)
+      this.getWeather(latitude, longitude)
     },err => {
       console.log(err)
-    })
+      this.getWeather(47.6, -122.33)
+    }, {maximumAge:60000, timeout:100, enableHighAccuracy:true})
   }
 
   render() {
     return (
       <div className="Container">
         <Route path='/home' render={props => (
-          <Home firstName={this.state.first_name} {...props}/>
+          <Home
+            firstName={this.state.first_name}
+            currTemp={this.state.currTemp}
+            highTemp={this.state.highTemp}
+            dayForecast={this.state.dayForecast}
+            weatherIcon={this.state.weatherIcon}
+            {...props}
+          />
         )} />
         <Route path='/login' render={props => (
           <LoginForm onSubmit={this.onLoginSubmit} {...props} />
