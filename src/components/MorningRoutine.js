@@ -89,7 +89,6 @@ class MorningRoutine extends Component {
     // Eventually use this.props.user_id in the axios request...
     axios.post(`${baseURL}/routine/morning`, postData)
       .then(res => {
-        console.log('Stuff')
         this.props.history.push('/home')
       })
       .catch(console.error)
