@@ -20,14 +20,6 @@ class FirstVictory extends Component {
     })
   }
 
-  // handleChange = (e, { value }) => this.setState({ value })
-  //
-  // handleSubmit = (e) => {
-  //   // console.log('submit?', this.props);
-  //   this.props.onSubmit({ did_make_bed: this.state.value })
-  //   // this.props.history.go('/quote')
-  // }
-
   render() {
     return (
       <Responsive {...Responsive.onlyMobile}>
