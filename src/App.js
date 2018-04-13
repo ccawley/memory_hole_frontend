@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import Home from './components/Home';
 import MorningRoutine from './components/MorningRoutine';
 import EveningRoutine from './components/EveningRoutine';
-// import Header from './components/NavBar';
+import Header from './components/NavBar';
 import LoginForm from './components/SplashLogin';
 import Registration from './components/Registration';
 
@@ -115,9 +115,16 @@ class App extends Component {
     }, {maximumAge:60000, timeout:100, enableHighAccuracy:true})
   }
 
+  logout = () => {
+    // localStorage.removeItem('token')
+    this.setState({ is_logged_in: false})
+    window.location.replace('/login')
+  }
+
   render() {
     return (
       <div className="Container">
+        { this.state.is_logged_in ? <Header logout={ this.logout } /> : null}
         <Route path='/home' render={props => (
           <Home
             firstName={this.state.first_name}
