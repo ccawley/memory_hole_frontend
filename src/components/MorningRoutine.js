@@ -42,37 +42,37 @@ class MorningRoutine extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   this.getQuote()
-  // }
-  //
-  // getQuote = async () => {
-  //   try {
-  //     let quote = await axios.get('http://localhost:8000/quote')
-  //     // handle empty quote requests or missing authors first...
-  //     if (quote.data.quoteAuthor === "") {
-  //       console.log('no author', quote.data);
-  //       this.setState({
-  //         inspirational_quote: quote.data.quoteText,
-  //         quote_author: 'Unknown'
-  //       })
-  //     } else if (quote.data.quoteText === "" && quote.data.quoteAuthor === "") {
-  //       console.log('bad quote', quote.data);
-  //       this.setState({
-  //         inspirational_quote: '“There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.”',
-  //         quote_author: 'Albert Einstein'
-  //       })
-  //     } else {
-  //       this.setState({
-  //         inspirational_quote: quote.data.quoteText,
-  //         quote_author: quote.data.quoteAuthor
-  //       })
-  //     }
-  //   }
-  //   catch (err) {
-  //     console.error(err)
-  //   }
-  // }
+  componentDidMount() {
+    this.getQuote()
+  }
+
+  getQuote = async () => {
+    try {
+      let quote = await axios.get('http://localhost:8000/quote')
+      // handle empty quote requests or missing authors first...
+      if (quote.data.quoteAuthor === "") {
+        console.log('no author', quote.data);
+        this.setState({
+          inspirational_quote: quote.data.quoteText,
+          quote_author: 'Unknown'
+        })
+      } else if (quote.data.quoteText === "" && quote.data.quoteAuthor === "") {
+        console.log('bad quote', quote.data);
+        this.setState({
+          inspirational_quote: '“There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.”',
+          quote_author: 'Albert Einstein'
+        })
+      } else {
+        this.setState({
+          inspirational_quote: quote.data.quoteText,
+          quote_author: quote.data.quoteAuthor
+        })
+      }
+    }
+    catch (err) {
+      console.error(err)
+    }
+  }
 
   updateState = (value) => {
     this.setState(value)

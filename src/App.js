@@ -20,7 +20,7 @@ const baseURL = 'http://localhost:8000'
 class App extends Component {
   constructor() {
     super();
-    /*
+
     // ---------------------------swap for deployed----------------------------
     this.state = {
       is_logged_in: false,
@@ -31,20 +31,20 @@ class App extends Component {
       dayForecast: '',
       weatherIcon: '',
       highTemp: 0
-    }*/
-  // }
-    // ---------------------------swap when developing-------------------------
-    this.state = {
-      is_logged_in: true,
-      user_id: 1,
-      user_name: 'Busey',
-      first_name: 'Gary',
-      currTemp: 0,
-      dayForecast: null,
-      weatherIcon: 'CLOUDY',
-      highTemp: 0
     }
   }
+    // ---------------------------swap when developing-------------------------
+  //   this.state = {
+  //     is_logged_in: true,
+  //     user_id: 1,
+  //     user_name: 'Busey',
+  //     first_name: 'Gary',
+  //     currTemp: 0,
+  //     dayForecast: null,
+  //     weatherIcon: 'CLOUDY',
+  //     highTemp: 0
+  //   }
+  // }
 
   onLoginSubmit = (e) => {
     e.preventDefault()
