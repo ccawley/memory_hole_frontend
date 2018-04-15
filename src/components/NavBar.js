@@ -29,7 +29,7 @@ function HeaderMenu({ logout }) {
                   Start Your Day
                 </Dropdown.Item>
               </Link>
-              <Link to="/evening/picOfDay">
+              <Link to="/evening/picOfTheDay">
                 <Dropdown.Item name='endDay'>
                   End Your Day
                 </Dropdown.Item>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
 // ---- LIST OF COMPONENTS ----
+import PicOfTheDay from './PicOfTheDay'
 import Lessons from './Lessons'
 import WinsBrags from './WinsBrags'
 import EveningGratitudes from './EveningGratitudes'
@@ -21,7 +22,7 @@ class EveningRoutine extends Component {
     this.state = {
       //...need to figure out how to get/store user_id after login
       // user_id:
-      // pic_of_the_day_url: '',
+      // pic_of_the_day_url: null,
       lessons_learned: '',
       wins_brags: '',
       gratitude_4: '',
@@ -57,6 +58,9 @@ class EveningRoutine extends Component {
   render() {
     return (
       <div>
+        <Route path='/evening/picOfTheDay' render={props => (
+          <PicOfTheDay onSubmit={this.updateState} {...props} />
+        )} />
         <Route path='/evening/lessons' render={props => (
           <Lessons onSubmit={this.updateState} {...props} />
         )} />

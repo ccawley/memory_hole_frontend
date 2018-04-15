@@ -25,7 +25,7 @@ class Home extends Component {
           <Link to="/morning/firstVictory">
             <Button attached='left'>Start Morning</Button>
           </Link>
-          <Link to="/evening/lessons">
+          <Link to="/evening/picOfTheDay">
             <Button attached='right'>Start Evening</Button>
           </Link>
         </div>
