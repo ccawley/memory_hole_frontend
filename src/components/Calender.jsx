@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Responsive } from 'semantic-ui-react';
+import { Grid, Responsive, List, Label, Tab } from 'semantic-ui-react';
 // import { Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
@@ -40,7 +40,8 @@ class Calender extends Component {
       wins_brags: null,
       gratitude_4: null,
       gratitude_5: null,
-      gratitude_6: null
+      gratitude_6: null,
+      pic_of_the_day_url: null
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -73,7 +74,8 @@ class Calender extends Component {
             wins_brags: data.wins_brags,
             gratitude_4: data.gratitude_4,
             gratitude_5: data.gratitude_5,
-            gratitude_6: data.gratitude_6
+            gratitude_6: data.gratitude_6,
+            pic_of_the_day_url: data.pic_of_the_day_url
           }
           // if (!data.gratitude_1) {
           //   { did_make_bed: null,
@@ -93,7 +95,8 @@ class Calender extends Component {
           //     wins_brags: null,
           //     gratitude_4: null,
           //     gratitude_5: null,
-          //     gratitude_6: null
+          //     gratitude_6: null,
+          //     pic_of_the_day_url: data.pic_of_the_day_url
           //   }
           // } else {
           //   { did_make_bed: data.did_make_bed,
@@ -113,7 +116,8 @@ class Calender extends Component {
           //     wins_brags: data.wins_brags,
           //     gratitude_4: data.gratitude_4,
           //     gratitude_5: data.gratitude_5,
-          //     gratitude_6: data.gratitude_6
+          //     gratitude_6: data.gratitude_6,
+          //     pic_of_the_day_url
           //   }
           // }
         )
@@ -145,7 +149,7 @@ class Calender extends Component {
   // ))
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <Responsive {...Responsive.onlyMobile}>
         <Grid>
