@@ -1,6 +1,6 @@
 # MemoryHole
 
-MemoryHole is a native react app that provides an all-in-one daily gratitude, goals, memories & journaling experience that structures your mornings & evenings in such a way that you've set yourself up to have a happy, productive & reflective day. You can then look back at any day & be presented with a visually appealing look at what that specific day of your life was like.
+MemoryHole is a mobile first web app that provides an all-in-one daily gratitudes, goals, reflections, and journaling experience. Drawing from concepts of positive psychology, cognitive, and behavioral science, MemoryHole guides your mornings and evenings in such a way that you've set yourself up to have an intentional, happy, and productive day. You can then look back at any day and be presented with a look at what that specific day of your life was like.
 
 ### Deployed here: http://memory-hole.surge.sh/ (Under Construction, sorry!)
 #### Frontend GitHub: https://github.com/ccawley/memory_hole_frontend
@@ -24,6 +24,11 @@ MemoryHole is a native react app that provides an all-in-one daily gratitude, go
 - Express.js
 - REST API
 - JavaScript
+
+#### External APIs
+- Cloudinary
+- Dark Sky Weather
+- Forismatic
 
 ## Screenshots
 
