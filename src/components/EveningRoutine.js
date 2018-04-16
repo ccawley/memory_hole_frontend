@@ -22,7 +22,7 @@ class EveningRoutine extends Component {
     this.state = {
       //...need to figure out how to get/store user_id after login
       // user_id:
-      // pic_of_the_day_url: null,
+      pic_of_the_day_url: null,
       lessons_learned: '',
       wins_brags: '',
       gratitude_4: '',

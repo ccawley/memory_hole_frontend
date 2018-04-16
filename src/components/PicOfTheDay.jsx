@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Form, Button, Responsive } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Grid, Form, Button, Responsive, Icon } from 'semantic-ui-react';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 
@@ -39,15 +38,16 @@ class PicOfTheDay extends Component {
     });
   }
 
-  // handleChange = (e, { name, value }) => this.setState({ [name]: value })
-  //
-  // handleSubmit = () => {
-  //   const { pic_of_the_day_url } = this.state
-  //
-  //   this.props.onSubmit({
-  //     pic_of_the_day_url
-  //   })
-  // }
+
+  handleSubmit = () => {
+    //const { pic_of_the_day_url } = this.state.uploadedFileCloudinaryUrl
+    const uploadedFileCloudinaryUrl = this.state.uploadedFileCloudinaryUrl
+    //console.log('pic of the day!', pic_of_the_day_url)
+    this.props.onSubmit({
+      pic_of_the_day_url: uploadedFileCloudinaryUrl
+    })
+    this.props.history.push('/evening/lessons')
+  }
 
   render() {
     return (
@@ -63,23 +63,24 @@ class PicOfTheDay extends Component {
                     multiple={false}
                     accept="image/*"
                     onDrop={this.onImageDrop.bind(this)}>
-                    <p>Drop an image or click to select a file to upload.</p>
-                  </Dropzone>
-                  <div>
-                    <div className="FileUpload">
-                      ...
-                    </div>
-
+                    <p>Click to select a file to upload.</p>
                     <div>
-                      {this.state.uploadedFileCloudinaryUrl === '' ? null :
+                      <div className="FileUpload">
+                        ...
+                      </div>
+
                       <div>
-                        <p>{this.state.uploadedFile.name}</p>
-                        <img src={this.state.uploadedFileCloudinaryUrl} />
-                      </div>}
+                        {this.state.uploadedFileCloudinaryUrl === '' ? null :
+                        <div>
+                          <p>{this.state.uploadedFile.name}</p>
+                          <Icon color='green' name='checkmark' size='huge' />
+                        </div>}
+                      </div>
                     </div>
-                  </div>
+                  </Dropzone>
                   <h3>Nice!</h3>
-                  <Link to="/evening/lessons"><Button type='submit' /*onClick={this.handleSubmit}*/>Next</Button></Link>
+                  <Button onClick={this.handleSubmit}>Next</Button>
+                  {/*<Link to="/evening/lessons"><Button onClick={this.handleSubmit}>Next</Button></Link>*/}
                 </Form.Group>
               </Form>
             </Grid.Column>
