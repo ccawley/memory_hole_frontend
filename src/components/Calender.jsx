@@ -32,7 +32,7 @@ class Calender extends Component {
       gratitude_5: null,
       gratitude_6: null,
       pic_of_the_day_url: null,
-      activeIndex: 0
+      activeIndex: -1
     };
     this.handleChange = this.handleChange.bind(this);
   }
