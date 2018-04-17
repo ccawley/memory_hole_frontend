@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Responsive, List, Label, Tab } from 'semantic-ui-react';
+import { Grid, Responsive, Tab, Image, Accordion, Icon } from 'semantic-ui-react';
 // import { Link } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
@@ -8,7 +8,6 @@ import axios from 'axios'
 import 'react-datepicker/dist/react-datepicker.css';
 
 class Calender extends Component {
-
   constructor (props) {
     super(props)
     // this.state = { stuff: [] }
@@ -32,9 +31,74 @@ class Calender extends Component {
       gratitude_4: null,
       gratitude_5: null,
       gratitude_6: null,
-      pic_of_the_day_url: null
+      pic_of_the_day_url: null,
+      activeIndex: 0
     };
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.handleChange(this.state.startDate)
+  }
+
+  createPanes = () => {
+    const { activeIndex } = this.state
+    const panes = [
+      { menuItem: 'Journal',
+        pane: (
+          <Tab.Pane key='journal'>
+            <Image src={this.state.pic_of_the_day_url} size='medium' bordered centered />
+            <p></p>
+            <p>{this.state.inspirational_quote}</p>
+            <p>~ {this.state.quote_author} ~</p>
+            <p>{this.state.journal_entry}</p>
+          </Tab.Pane>
+        )
+      },
+      { menuItem: 'Goal',
+        pane: (
+          <Tab.Pane key='goal'>
+          </Tab.Pane>
+        )
+      },
+      { menuItem: 'Gratitudes',
+        pane: (
+          <Tab.Pane key='gratitudes'>
+            <h2>Today I was grateful for:</h2>
+              <p>{this.state.gratitude_1}</p>
+              <p>{this.state.gratitude_2}</p>
+              <p>{this.state.gratitude_3}</p>
+              <p>{this.state.gratitude_4}</p>
+              <p>{this.state.gratitude_5}</p>
+              <p>{this.state.gratitude_6}</p>
+          </Tab.Pane>
+        )
+      },
+      { menuItem: 'Reflections',
+        pane: (
+          <Tab.Pane key='reflections'>
+            <h2>My Goal for the day:</h2>
+              <p>{this.state.daily_goal}</p>
+              <Accordion>
+                <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
+                  <Icon name='dropdown' />
+                  Microtargets set:
+                </Accordion.Title>
+                <Accordion.Content active={activeIndex === 0}>
+                  <p>- {this.state.goal_microtarget_1}</p>
+                  <p>- {this.state.goal_microtarget_2}</p>
+                  <p>- {this.state.goal_microtarget_3}</p>
+                </Accordion.Content>
+              </Accordion>
+            <h2>Lessons Learned:</h2>
+              <p>{this.state.lessons_learned}</p>
+            <h2>Today I was proud of:</h2>
+              <p>{this.state.wins_brags}</p>
+          </Tab.Pane>
+        )
+      }
+    ]
+    this.panes = panes
   }
 
   handleChange(date) {
@@ -45,7 +109,7 @@ class Calender extends Component {
     axios.get(`http://localhost:8000/routine/dayview?date=${formatedDate}&user_id=${this.props.user_id}`)
       .then(res => {
         let data = res.data.day.rows[0]
-        console.log(data);
+        // console.log(data);
         // this.setState({stuff: res.data.result.rows})
         this.setState(
           { did_make_bed: data.did_make_bed,
@@ -76,6 +140,14 @@ class Calender extends Component {
       })
   }
 
+  handleClick = (e, titleProps) => {
+    const { index } = titleProps
+    const { activeIndex } = this.state
+    const newIndex = activeIndex === index ? -1 : index
+
+    this.setState({ activeIndex: newIndex })
+  }
+
   // handleChange = (e, { name, value }) => this.setState({ [name]: value })
   //
   // handleSubmit = () => {
@@ -97,6 +169,7 @@ class Calender extends Component {
 
   render() {
     // console.log(this.state)
+    this.createPanes()
     return (
       <Responsive {...Responsive.onlyMobile}>
         <Grid>
@@ -112,6 +185,11 @@ class Calender extends Component {
                 showYearDropdown
                 dropdownMode="select"
               />
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row centered>
+            <Grid.Column textAlign='center'>
+              <Tab panes={this.panes} renderActiveOnly={false} />
             </Grid.Column>
           </Grid.Row>
         </Grid>
