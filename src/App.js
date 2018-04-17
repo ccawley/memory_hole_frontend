@@ -91,6 +91,7 @@ class App extends Component {
     this.getWeather()
   }
 
+  // Handle weather icon that comes back like partly-cloudy to be turned into PARTLY_CLOUDY...
   getWeather = (latitude, longitude) => {
     axios.get(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${'6240cc42aaad1d910992a699a33d5d0a'}/${latitude},${longitude}`, {headers: {'x-requested-with': 'curl'}})
       .then(res => {
