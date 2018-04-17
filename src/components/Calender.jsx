@@ -135,7 +135,6 @@ class Calender extends Component {
         )
       })
       .catch(err => {
-        console.log('error');
         console.log(err)
       })
   }
