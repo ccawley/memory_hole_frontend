@@ -55,12 +55,6 @@ class Calender extends Component {
           </Tab.Pane>
         )
       },
-      { menuItem: 'Goal',
-        pane: (
-          <Tab.Pane key='goal'>
-          </Tab.Pane>
-        )
-      },
       { menuItem: 'Gratitudes',
         pane: (
           <Tab.Pane key='gratitudes'>

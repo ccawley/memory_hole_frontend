@@ -22,29 +22,29 @@ class App extends Component {
     super();
 
     // ---------------------------swap for deployed----------------------------
-    this.state = {
-      is_logged_in: false,
-      user_id: null,
-      user_name: null,
-      first_name: null,
-      currTemp: 0,
-      dayForecast: '',
-      weatherIcon: '',
-      highTemp: 0
-    }
-  }
-    // ---------------------------swap when developing-------------------------
   //   this.state = {
-  //     is_logged_in: true,
-  //     user_id: 1,
-  //     user_name: 'Busey',
-  //     first_name: 'Gary',
+  //     is_logged_in: false,
+  //     user_id: null,
+  //     user_name: null,
+  //     first_name: null,
   //     currTemp: 0,
-  //     dayForecast: null,
-  //     weatherIcon: 'CLOUDY',
+  //     dayForecast: '',
+  //     weatherIcon: '',
   //     highTemp: 0
   //   }
   // }
+    // ---------------------------swap when developing-------------------------
+    this.state = {
+      is_logged_in: true,
+      user_id: 1,
+      user_name: 'Busey',
+      first_name: 'Gary',
+      currTemp: 0,
+      dayForecast: null,
+      weatherIcon: 'CLOUDY',
+      highTemp: 0
+    }
+  }
 
   onLoginSubmit = (e) => {
     e.preventDefault()
