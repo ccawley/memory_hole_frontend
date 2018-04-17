@@ -22,29 +22,29 @@ class App extends Component {
     super();
 
     // ---------------------------swap for deployed----------------------------
-  //   this.state = {
-  //     is_logged_in: false,
-  //     user_id: null,
-  //     user_name: null,
-  //     first_name: null,
-  //     currTemp: 0,
-  //     dayForecast: '',
-  //     weatherIcon: '',
-  //     highTemp: 0
-  //   }
-  // }
-    // ---------------------------swap when developing-------------------------
     this.state = {
-      is_logged_in: true,
-      user_id: 1,
-      user_name: 'Busey',
-      first_name: 'Gary',
+      is_logged_in: false,
+      user_id: null,
+      user_name: null,
+      first_name: null,
       currTemp: 0,
-      dayForecast: null,
-      weatherIcon: 'CLOUDY',
+      dayForecast: '',
+      weatherIcon: '',
       highTemp: 0
     }
   }
+    // ---------------------------swap when developing-------------------------
+  //   this.state = {
+  //     is_logged_in: true,
+  //     user_id: 1,
+  //     user_name: 'Busey',
+  //     first_name: 'Gary',
+  //     currTemp: 0,
+  //     dayForecast: null,
+  //     weatherIcon: 'CLOUDY',
+  //     highTemp: 0
+  //   }
+  // }
 
   onLoginSubmit = (e) => {
     e.preventDefault()
@@ -91,7 +91,6 @@ class App extends Component {
     this.getWeather()
   }
 
-  // Handle weather icon that comes back like partly-cloudy to be turned into PARTLY_CLOUDY...
   getWeather = (latitude, longitude) => {
     axios.get(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/${'6240cc42aaad1d910992a699a33d5d0a'}/${latitude},${longitude}`, {headers: {'x-requested-with': 'curl'}})
       .then(res => {
@@ -99,7 +98,7 @@ class App extends Component {
         this.setState({
           currTemp: res.data.currently.temperature,
           dayForecast: res.data.hourly.summary,
-          weatherIcon: res.data.hourly.icon.toUpperCase(),
+          weatherIcon: res.data.hourly.icon.split('-').join('_').toUpperCase(),
           highTemp: res.data.daily.data[0].temperatureMax
         })
       })
