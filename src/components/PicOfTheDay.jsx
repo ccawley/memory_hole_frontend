@@ -53,31 +53,32 @@ class PicOfTheDay extends Component {
     return (
       <Responsive {...Responsive.onlyMobile}>
         <Grid>
-          <Grid.Row centered>
-            <Grid.Column textAlign='center' width={13} className='dailyCard'>
+          <Grid.Row style={{ marginTop: '10px' }} centered>
+            <Grid.Column textAlign='center' width={13} className='nightlyCard'>
               <Form>
                 <Form.Group grouped>
                   <h1>Photo of the day</h1>
                   <h2>A picture is worth a thousand words so upload one photo that you think would spark memories if you were to look back on it years from now.</h2>
-                  <Dropzone
-                    multiple={false}
-                    accept="image/*"
-                    onDrop={this.onImageDrop.bind(this)}>
-                    <p>Click to select a file to upload.</p>
-                    <div>
-                      <div className="FileUpload">
-                        ...
-                      </div>
-
+                  <div style={{ marginLeft: '50px' }}>
+                    <Dropzone
+                      multiple={false}
+                      accept="image/*"
+                      onDrop={this.onImageDrop.bind(this)}>
+                      <p>Click to select a file to upload.</p>
                       <div>
-                        {this.state.uploadedFileCloudinaryUrl === '' ? null :
+                        <div className="FileUpload">
+                          ...
+                        </div>
                         <div>
-                          <p>{this.state.uploadedFile.name}</p>
-                          <Icon color='green' name='checkmark' size='huge' />
-                        </div>}
+                          {this.state.uploadedFileCloudinaryUrl === '' ? null :
+                          <div>
+                            <p>{this.state.uploadedFile.name}</p>
+                            <Icon color='green' name='checkmark' size='huge' />
+                          </div>}
+                        </div>
                       </div>
-                    </div>
-                  </Dropzone>
+                    </Dropzone>
+                  </div>
                   <h3>Nice!</h3>
                   <Button onClick={this.handleSubmit}>Next</Button>
                   {/*<Link to="/evening/lessons"><Button onClick={this.handleSubmit}>Next</Button></Link>*/}

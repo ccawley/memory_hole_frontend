@@ -5,9 +5,9 @@ import { Button, Form, Responsive, Grid } from 'semantic-ui-react';
 const Register = ({ onSubmit }) => (
   <Responsive {...Responsive.onlyMobile}>
     <Grid>
-      <Grid.Row centered>
+      <Grid.Row style={{ marginTop: '100px' }} centered>
         <Grid.Column textAlign='center' width={12}>
-          <h1>MemoryHole</h1>
+          <h1 id='logo'>MemoryHole</h1>
           <Form onSubmit={onSubmit}>
             <Form.Field>
               <label>User Name:</label>

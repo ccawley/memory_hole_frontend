@@ -7,7 +7,7 @@ function AwakeMindfully(props) {
   return (
     <Responsive {...Responsive.onlyMobile}>
       <Grid>
-        <Grid.Row centered>
+        <Grid.Row style={{ marginTop: '10px' }} centered>
           <Grid.Column textAlign='center' width={13} className='dailyCard'>
             <h1>You're crushing it!</h1>
             <h2>Now, take 10 minutes to give your brain some morning love. Allow it wake up slowly and mindfully.</h2>

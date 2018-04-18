@@ -2,12 +2,14 @@ import React from 'react';
 import { Button, Form, Responsive, Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
+// import './splashLogin.css'
+
 const LoginForm = ({ onSubmit }) => (
   <Responsive {...Responsive.onlyMobile}>
     <Grid>
-      <Grid.Row centered>
+      <Grid.Row style={{ marginTop: '125px' }} centered>
         <Grid.Column textAlign='center' width={12}>
-          <h1>MemoryHole</h1>
+          <h1 id='logo'>MemoryHole</h1>
           <Form onSubmit={onSubmit}>
             <Form.Field>
               <label>User Name:</label>

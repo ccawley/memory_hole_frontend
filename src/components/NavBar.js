@@ -8,7 +8,7 @@ function HeaderMenu({ logout }) {
     <Responsive {...Responsive.onlyMobile}>
       <Menu>
         <Link to='/home'>
-          <Menu.Item header>MemoryHole</Menu.Item>
+          <Menu.Item id='logo' header>MemoryHole</Menu.Item>
         </Link>
 
         <Menu.Menu position='right'>

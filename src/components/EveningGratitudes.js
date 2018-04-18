@@ -22,8 +22,8 @@ class EveningGratitudes extends Component {
     return (
       <Responsive {...Responsive.onlyMobile}>
         <Grid>
-          <Grid.Row centered>
-            <Grid.Column textAlign='center' width={13} className='dailyCard'>
+          <Grid.Row style={{ marginTop: '10px' }} centered>
+            <Grid.Column textAlign='center' width={13} className='nightlyCard'>
               <Form>
                 <Form.Group grouped>
                   <h1>Think thankfully again!</h1>

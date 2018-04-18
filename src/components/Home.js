@@ -10,23 +10,29 @@ class Home extends Component {
 
   renderWeather = () => {
     return (
-      <div>
-        <h2>Hello {this.props.firstName}</h2>
-        <h3>{DateFormat(Now, "dddd, mmmm dS, yyyy")}</h3>
-        <h3>{`Currently: ${this.props.currTemp} - High: ${this.props.highTemp}`}</h3>
-        <Skycons
-          color='black'
-          icon={this.props.weatherIcon}
-          autoplay={true}
-        />
-        <p>Summary: {this.props.dayForecast}</p>
-        <p><small>https://darksky.net/poweredby/</small></p>
+      <div style={{ marginTop: '40px' }}>
         <div>
+          <h2>Hello {this.props.firstName}!</h2>
+        </div>
+        <div style={{ marginTop: '20px' }}>
+          <h3>{DateFormat(Now, "dddd, mmmm dS, yyyy")}</h3>
+        </div>
+        <div style={{ marginTop: '50px' }}>
+          <h3>{`Currently: ${this.props.currTemp} - High: ${this.props.highTemp}`}</h3>
+          <Skycons
+            color='black'
+            icon={this.props.weatherIcon}
+            autoplay={true}
+          />
+          <p>Summary: {this.props.dayForecast}</p>
+          <p><small>https://darksky.net/poweredby/</small></p>
+        </div>
+        <div style={{ marginTop: '50px' }}>
           <Link to="/morning/firstVictory">
-            <Button attached='left'>Start Morning</Button>
+            <Button style={{ marginRight: '10px' }} color='yellow'>Start Morning</Button>
           </Link>
           <Link to="/evening/picOfTheDay">
-            <Button attached='right'>Start Evening</Button>
+            <Button style={{ marginLeft: '10px' }} color='blue'>Start Evening</Button>
           </Link>
         </div>
       </div>

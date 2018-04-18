@@ -34,7 +34,7 @@ class FuelYourDay extends Component {
     return (
       <Responsive {...Responsive.onlyMobile}>
         <Grid>
-          <Grid.Row centered>
+          <Grid.Row style={{ marginTop: '10px' }} centered>
             <Grid.Column textAlign='center' width={13} className='dailyCard'>
               <Form>
                   <h1>Finally, fuel your day!</h1>
