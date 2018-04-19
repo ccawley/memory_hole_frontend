@@ -33,7 +33,7 @@ class Lessons extends Component {
                     value={this.state.lessons_learned}
                     onChange={this.handleChange}
                   />
-                  <h3>Remember, mistakes are only mistakes if you didn't learn anything from them.</h3>
+                  <p className='cardP'>Remember, mistakes are only mistakes if<br></br>you didn't learn anything from them.</p>
                   <Link to="/evening/wins&brags"><Button type='submit' onClick={this.handleSubmit}>Next!</Button></Link>
                 </Form.Group>
               </Form>

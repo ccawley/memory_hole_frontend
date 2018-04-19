@@ -12,13 +12,13 @@ class Home extends Component {
     return (
       <div style={{ marginTop: '40px' }}>
         <div>
-          <h2>Hello {this.props.firstName}!</h2>
+          <h1>Hello {this.props.firstName}!</h1>
         </div>
         <div style={{ marginTop: '20px' }}>
-          <h3>{DateFormat(Now, "dddd, mmmm dS, yyyy")}</h3>
+          <h2>{DateFormat(Now, "dddd, mmmm dS, yyyy")}</h2>
         </div>
         <div style={{ marginTop: '50px' }}>
-          <h3>{`Currently: ${this.props.currTemp} - High: ${this.props.highTemp}`}</h3>
+          <h2>{`Currently: ${(this.props.currTemp).toFixed()} ~ High: ${(this.props.highTemp).toFixed()}`}</h2>
           <Skycons
             color='black'
             icon={this.props.weatherIcon}

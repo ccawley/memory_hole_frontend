@@ -33,7 +33,7 @@ class WinsBrags extends Component {
                     value={this.state.wins_brags}
                     onChange={this.handleChange}
                   />
-                  <h3>Positive reinforcement will allow you to be happier, more confident and more loving of yourself.</h3>
+                  <p className='cardP'>Positive reinforcement will allow<br></br>you to be happier, more confident<br></br>and more loving of yourself.</p>
                   <Link to="/evening/eveningGratitudes"><Button type='submit' onClick={this.handleSubmit}>Next!</Button></Link>
                 </Form.Group>
               </Form>

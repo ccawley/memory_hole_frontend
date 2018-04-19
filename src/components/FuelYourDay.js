@@ -64,7 +64,7 @@ class FuelYourDay extends Component {
                       onChange={this.handleBreakfastChange}
                     />
                   </Form.Field>
-                  <Button type='submit' onClick={this.handleSubmit}>Cool, now get out there!</Button>
+                  <Button type='submit' onClick={this.handleSubmit} style={{ marginTop: '30px' }}>Cool, now get out there!</Button>
               </Form>
             </Grid.Column>
           </Grid.Row>

@@ -46,8 +46,8 @@ class Calender extends Component {
     const panes = [
       { menuItem: 'Journal',
         pane: (
-          <Tab.Pane key='journal'>
-            <Image src={this.state.pic_of_the_day_url} size='medium' bordered centered />
+          <Tab.Pane className='journalPanes' key='journal'>
+            <Image className='journalPic' src={this.state.pic_of_the_day_url} size='medium' bordered centered />
             <p></p>
             <p>{this.state.inspirational_quote}</p>
             <p>~ {this.state.quote_author} ~</p>
@@ -57,7 +57,7 @@ class Calender extends Component {
       },
       { menuItem: 'Gratitudes',
         pane: (
-          <Tab.Pane key='gratitudes'>
+          <Tab.Pane className='journalPanes' key='gratitudes'>
             <h2>Today I was grateful for:</h2>
               <p>{this.state.gratitude_1}</p>
               <p>{this.state.gratitude_2}</p>
@@ -70,7 +70,7 @@ class Calender extends Component {
       },
       { menuItem: 'Reflections',
         pane: (
-          <Tab.Pane key='reflections'>
+          <Tab.Pane className='journalPanes' key='reflections'>
             <h2>My Goal for the day:</h2>
               <p>{this.state.daily_goal}</p>
               <Accordion>

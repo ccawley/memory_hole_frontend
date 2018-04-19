@@ -46,7 +46,7 @@ class MorningGratitudes extends Component {
                     value={this.state.gratitude_3}
                     onChange={this.handleChange}
                   />
-                  <h4>Remember, being happy and grateful is a choice you make daily. Accept that you while you can't control everything, you CAN choose to give yourself the gift of being the happiest version of yourself that you can be. Thinking gratefully and positively will go a long way in acheiving this.</h4>
+                  <p className='cardP'>Remember, being happy and grateful<br></br>is a choice you make daily. Accept<br></br>that you while you can't control everything, you CAN choose to give yourself the gift of being the happiest version of yourself that you can be. Thinking gratefully and positively<br></br>will go a long way in acheiving this.</p>
                   <Link to="/morning/dailyGoal"><Button type='submit' onClick={this.handleSubmit}>Next!</Button></Link>
                 </Form.Group>
               </Form>

@@ -97,3 +97,16 @@
   height: 90vh;
   padding: 10px;
 }
+
+.cardP {
+  margin: 30px 0;
+}
+
+.journalPic {
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.journalPanes {
+  min-height: 468px;
+}

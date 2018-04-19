@@ -14,9 +14,9 @@ function AwakeMindfully(props) {
             <p>
               Make a batch of coffee or some tea, show some love to your four legged friend or sit and meditate. Whatever helps you get in a good headspace and feeling happy is fanastic!
             </p>
-            <h3>Let this quote be an inspiration for your day.</h3>
-            <h3>{props.quote}</h3>
-            <h3>~ {props.author} ~</h3>
+            <h3>Let this quote be<br></br>an inspiration for your day.</h3>
+            <p>{props.quote}</p>
+            <p>~ {props.author} ~</p>
             <Link to="/morning/morningGratitudes"><Button>Next!</Button></Link>
           </Grid.Column>
         </Grid.Row>
