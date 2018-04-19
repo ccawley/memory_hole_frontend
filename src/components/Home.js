@@ -29,10 +29,10 @@ class Home extends Component {
         </div>
         <div style={{ marginTop: '50px' }}>
           <Link to="/morning/firstVictory">
-            <Button style={{ marginRight: '10px' }} color='yellow'>Start Morning</Button>
+            <Button id='morningButton'>Start Morning</Button>
           </Link>
           <Link to="/evening/picOfTheDay">
-            <Button style={{ marginLeft: '10px' }} color='blue'>Start Evening</Button>
+            <Button id='eveningButton'>Start Evening</Button>
           </Link>
         </div>
       </div>

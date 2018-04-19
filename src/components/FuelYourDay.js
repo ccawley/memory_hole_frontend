@@ -35,7 +35,7 @@ class FuelYourDay extends Component {
       <Responsive {...Responsive.onlyMobile}>
         <Grid>
           <Grid.Row style={{ marginTop: '10px' }} centered>
-            <Grid.Column textAlign='center' width={13} className='dailyCard'>
+            <Grid.Column textAlign='center' width={13} className='dailyCard5'>
               <Form>
                   <h1>Finally, fuel your day!</h1>
                   <h3>You can't have your best possible day on an empty stomach so make sure you fuel your body with some food!</h3>

@@ -166,7 +166,7 @@ class Calender extends Component {
     return (
       <Responsive {...Responsive.onlyMobile}>
         <Grid>
-          <Grid.Row centered>
+          <Grid.Row centered style={{ marginTop: '30px' }}>
             <Grid.Column textAlign='center'>
               <p>Please select a day to view.</p>
               <DatePicker

@@ -24,7 +24,7 @@ class DailyGoal extends Component {
       <Responsive {...Responsive.onlyMobile}>
         <Grid>
           <Grid.Row style={{ marginTop: '10px' }} centered>
-            <Grid.Column textAlign='center' width={13} className='dailyCard'>
+            <Grid.Column textAlign='center' width={13} className='dailyCard4'>
               <Form>
                 <Form.Group grouped>
                   <h1>Next, set a goal.</h1>

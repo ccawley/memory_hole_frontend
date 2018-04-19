@@ -21,7 +21,7 @@ class Lessons extends Component {
       <Responsive {...Responsive.onlyMobile}>
         <Grid>
           <Grid.Row style={{ marginTop: '10px' }} centered>
-            <Grid.Column textAlign='center' width={13} className='nightlyCard'>
+            <Grid.Column textAlign='center' width={13} className='nightlyCard2'>
               <Form>
                 <Form.Group grouped>
                   <h1>Did you learn today?</h1>

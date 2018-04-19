@@ -25,7 +25,7 @@ class FirstVictory extends Component {
       <Responsive {...Responsive.onlyMobile}>
         <Grid>
           <Grid.Row style={{ marginTop: '10px' }} centered>
-            <Grid.Column textAlign='center' width={13} className='dailyCard'>
+            <Grid.Column textAlign='center' width={13} className='dailyCard1'>
               <Form>
                 <Form.Group grouped>
                   <h1>Good Morning!</h1>
