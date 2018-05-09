@@ -30,7 +30,8 @@ class App extends Component {
       currTemp: 0,
       dayForecast: '',
       weatherIcon: '',
-      highTemp: 0
+      highTemp: 0,
+      loginError: ''
     }
   }
     // ---------------------------swap when developing-------------------------
@@ -65,7 +66,11 @@ class App extends Component {
         })
         this.props.history.push('/home')
       })
-      .catch(console.error)
+      .catch(err => {
+        // This catches an incorrect login but now need to pass that state to my splashLogin component and show it to the user.
+        console.log(err.response.data.error);
+        this.setState({ loginError: err.response.data.error })
+      });
   }
 
   onRegistrationSubmit = (e) => {
@@ -139,7 +144,10 @@ class App extends Component {
           />
         )} />
         <Route path='/login' render={props => (
-          <LoginForm onSubmit={this.onLoginSubmit} {...props} />
+          <LoginForm
+            onSubmit={this.onLoginSubmit}
+            {...props}
+          />
         )} />
         <Route path='/register' render={props => (
           <Registration onSubmit={this.onRegistrationSubmit} {...props} />
