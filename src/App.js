@@ -68,7 +68,7 @@ class App extends Component {
       })
       .catch(err => {
         // This catches an incorrect login but now need to pass that state to my splashLogin component and show it to the user.
-        console.log(err.response.data.error);
+        // console.log(err.response.data.error);
         this.setState({ loginError: err.response.data.error })
       });
   }
@@ -124,7 +124,6 @@ class App extends Component {
 
   logout = () => {
     // localStorage.removeItem('token')
-    console.log("clicked logout app.js");
     this.setState({ is_logged_in: false})
     window.location.replace('/login')
   }
