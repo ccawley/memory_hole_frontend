@@ -41,15 +41,39 @@ class Home extends Component {
 
   render() {
     return (
-      <Responsive {...Responsive.onlyMobile}>
-        <Grid>
-          <Grid.Row centered>
-            <Grid.Column textAlign='center' width={14}>
-              { this.props.dayForecast ? this.renderWeather() : null}
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Responsive>
+
+      <div>
+        <Responsive {...Responsive.onlyComputer}>
+          <Grid>
+            <Grid.Row centered>
+              <Grid.Column textAlign='center' width={8}>
+                { this.props.dayForecast ? this.renderWeather() : null}
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Responsive>
+
+        <Responsive {...Responsive.onlyTablet}>
+          <Grid>
+            <Grid.Row centered>
+              <Grid.Column textAlign='center' width={10}>
+                { this.props.dayForecast ? this.renderWeather() : null}
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Responsive>
+
+        <Responsive {...Responsive.onlyMobile}>
+          <Grid>
+            <Grid.Row centered>
+              <Grid.Column textAlign='center' width={14}>
+                { this.props.dayForecast ? this.renderWeather() : null}
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Responsive>
+      </div>
+
     );
   }
 }
