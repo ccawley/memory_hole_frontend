@@ -1,11 +1,10 @@
 # MemoryHole
 
-MemoryHole is a mobile first web app that provides an all-in-one daily gratitudes, goals, reflections, and journaling experience. Drawing from concepts of positive psychology, cognitive, and behavioral science, MemoryHole guides your mornings and evenings in such a way that you've set yourself up to have an intentional, happy, and productive day. You can then look back at any day and be presented with a look at what that specific day of your life was like.
+MemoryHole is a mobile first web app that provides an all-in-one daily gratitudes, goals, reflections, and journaling experience. Drawing from concepts of positive psychology and cognitive, and behavioral science, MemoryHole guides your mornings and evenings in such a way that you've set yourself up to have an intentional, happy, and productive day. You can then look back at any day and be presented with a look at what that specific day of your life was like.
 
 ### Deployed live here: xhttps://memory-hole.com*
 ##### * Please watch the demo video below as I am currently down while I have some code refactored, sorry!
 
-#### Frontend GitHub: https://github.com/ccawley/memory_hole_frontend
 #### Backend GitHub: https://github.com/ccawley/memory_hole_backend
 
 ### YouTube Demo: https://youtu.be/e5iSVdQMJbo
