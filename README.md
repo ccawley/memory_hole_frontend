@@ -33,9 +33,7 @@ MemoryHole is a mobile first web app that provides an all-in-one daily gratitude
 ## Screenshots
 
 ### Registration/Login/Dashboard:
-<img src="https://github.com/ccawley/memory_hole_frontend/blob/master/screenshots/2MemoryHole-registration.png" width="30%">     
-<img src="https://github.com/ccawley/memory_hole_frontend/blob/master/screenshots/1MemoryHole-login.png" width="30%">
-<img src="https://github.com/ccawley/memory_hole_frontend/blob/master/screenshots/3MemoryHole-home.png" width="30%">
+<img src="https://github.com/ccawley/memory_hole_frontend/blob/master/screenshots/2MemoryHole-registration.png" width="30%">     <img src="https://github.com/ccawley/memory_hole_frontend/blob/master/screenshots/1MemoryHole-login.png" width="30%">     <img src="https://github.com/ccawley/memory_hole_frontend/blob/master/screenshots/3MemoryHole-home.png" width="30%">
 
 ### Main page upon login:
 ![Main Page](screenshots/memory-hole-main.png)
